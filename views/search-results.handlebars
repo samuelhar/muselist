@@ -1,0 +1,16 @@
+<div class="page-header">
+	<h3>Search Results</h3>
+</div>
+
+<div class="search-results">
+	<h4> Here are some songs by {{artist}}: </h4>
+	<ul>
+	{{#each tracks}}
+		<li> {{this.name}} </li>
+	{{/each}}
+	</ul>	
+</div>
+
+<div class = "redirectBtn">
+<a href="/" class="btn btn-primary" role="button">Search Again</a>
+</div>S
