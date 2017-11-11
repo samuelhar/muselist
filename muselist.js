@@ -40,7 +40,7 @@ app.post('/process', function(req, res){
     // Set the access token on the API object so that it's used in all future requests
     spotifyApi.setAccessToken(data.body['access_token']);
 
-    // Get the top 5 songs by the artist chosen
+    // Get 5 songs by the artist chosen
     return spotifyApi.searchTracks('artist:'+ req.body.artist, {limit: 5})
   }).then(function(data) {
     res.render('search-results', {artist: req.body.artist, tracks: data.body.tracks.items});
