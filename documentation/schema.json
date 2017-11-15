@@ -1,0 +1,58 @@
+//note - remove comments before using in actual JSON parser
+
+// records any vote that is made, or change to the playlist
+{
+	“title”: “Event”,
+	“type”: “object”,
+	“required”: [“time”, “description”, “user”],
+	“properties”: {
+		“time”: {“type”: “date”},
+		“description”: {“type”: “string”},
+		“user”: {“type”: “User”},
+		“value”: {“type”: “integer”, “enum”: [-1, 0, 1]}
+	}
+}
+
+//records user information as well as the party they are currently attending (if any) or events they’ve created
+{
+	“title”: “User”,
+	“type”: “object”,
+	“required”: [“id”, “name”],
+	“properties”: {
+		“id”: {“type”: “string”},
+		“name”: {“type”: “string”},
+		“party”: {“type”: “string”},
+		“events”: {“type”: “array”, “items” : {“type”: “Event”}},
+		“anthem”: {“type”: “Song”}
+	}			
+}
+
+//records party information. This includes the host, all users attending, the current playlist, and any changes made
+{
+	“title”: “Party”,
+	“type”: “object”,
+	“required”: [“id”, “host”, “playlist”],
+	“properties”: {
+		“id”: {“type”: “string”},
+		“description”: {“type”: “string”},
+		“host”: {“type”: “User”},
+		“playlist”: {“type”: “array”, “items” : {“type”: “Song”}},
+		“guests”: {“type”: “array”, “items”: {“type”: “User”}},
+		“changes”: {“type”: “array”, “items”: {“type”: “Event”}},
+		“password”: {“type”: “string”}
+	}
+}
+
+//records general information about a song, as well as its current voting score
+{
+	“title”: “Song”,
+	“type”: “object”,
+	“required”: [“title”, “artist”, “score”],
+	“properties”: {
+		“title”: {“type”: “string”},
+		“artist”: {“type”: “string”},
+		“album”: {“type”: “string”},
+		“year”: {“type”: “integer”},
+		“score”: {“type”: “integer”}
+	}
+}
