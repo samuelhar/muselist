@@ -1,22 +1,58 @@
 var express = require('express');
-
 require('dotenv').config();
 
+//database
 var mongodb = require("mongodb");
 var app = express();
-
 app.disable('x-powered-by');
-
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
-
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-
 app.use(require('body-parser').urlencoded({extended: true}));
 
 var formidable = require('formidable');
 
 var SpotifyWebApi = require('spotify-web-api-node');
+
+//ajv is used to validate the json
+var Ajv = require('ajv');
+var ajv = new Ajv({allErrors: true});
+
+var schema = {
+  "title": "Song",
+  "type": "object",
+  "required": ["songId", "name"],
+  "properties": {
+    "songId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "artist": {
+      "type": "string"
+    },
+    "album": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "score": {
+      "type": "integer"
+    }
+  }
+};
+
+var validate = ajv.compile(schema);
+
+//test very simply checks whatever input with the schema 
+function test(data) {
+  var valid = validate(data);
+  if (valid) console.log("Valid!");
+  else console.log("Invalid: " + ajv.errorsText(validate.errors));
+}
+
 
 var spotifyApi = new SpotifyWebApi({
   clientId : process.env.CLIENT_ID,
@@ -92,12 +128,23 @@ app.post('/process', function(req, res){
     if (len >= 5)
     {
       var artistString = req.body.artist;
-      var track1 = data.body.tracks.items[0].name;
-      var track2 = data.body.tracks.items[1].name;
-      var track3 = data.body.tracks.items[2].name;
-      var track4 = data.body.tracks.items[3].name;
-      var track5 = data.body.tracks.items[4].name;
 
+      var schema1 = {"songId": data.body.tracks.items[0].id, "name": data.body.tracks.items[0].name,
+                      "artist": req.body.artist, "album": data.body.tracks.items[0].album.name};
+
+      var schema2 = {"songId": data.body.tracks.items[1].id, "name": data.body.tracks.items[1].name,
+                      "artist": req.body.artist, "album": data.body.tracks.items[1].album.name};
+
+      var schema3 = {"songId": data.body.tracks.items[2].id, "name": data.body.tracks.items[2].name,
+                "artist": req.body.artist, "album": data.body.tracks.items[2].album.name};
+
+      var schema4 = {"songId": data.body.tracks.items[3].id, "name": data.body.tracks.items[3].name,
+                "artist": req.body.artist, "album": data.body.tracks.items[3].album.name};
+
+      var schema5 = {"songId": data.body.tracks.items[4].id, "name": data.body.tracks.items[4].name,
+                "artist": req.body.artist, "album": data.body.tracks.items[4].album.name};
+
+      var schemas = [schema1, schema2, schema3, schema4, schema5];
       var MongoClient = mongodb.MongoClient;
       var url = 'mongodb://localhost:27017/test';
       MongoClient.connect(url, function(err, db) {
@@ -106,8 +153,20 @@ app.post('/process', function(req, res){
         } else {
           console.log("Connection established");
           var cl = db.collection("test");
-          cl.insert([{"artist": artistString, "track1": track1, "track2": track2
-        , "track3": track3, "track4":track4, "track5": track5}]);
+        
+          for (i=0; i< 5; i++)
+          {
+            var valid = validate(schemas[i]);
+            if (!valid) console.log(validate.errors);
+            else
+            {
+              console.log("validated!");
+              cl.insert([schemas[i]]);
+
+            }
+        }
+    //      cl.insert([{"artist": artistString, "track1": track1, "track2": track2
+    //    , "track3": track3, "track4":track4, "track5": track5}]);
         }
        db.close();
 
