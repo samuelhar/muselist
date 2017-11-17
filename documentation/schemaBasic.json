@@ -1,0 +1,25 @@
+{
+	"title": "Song",
+	"type": "object",
+	"required": ["songId", "name"],
+	"properties": {
+		"songId": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"artist": {
+			"type": "string"
+		},
+		"album": {
+			"type": "string"
+		},
+		"year": {
+			"type": "integer"
+		},
+		"score": {
+			"type": "integer"
+		}
+	}
+}
