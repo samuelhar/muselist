@@ -1,0 +1,149 @@
+<div class ="page-header">
+	<h2>Database test</h2>
+</div>
+
+<div class="page-header">
+</div>
+
+<h4>Select collection to use</h5>
+
+<form action="/data?form=collection" method="POST">
+
+<select class="collection" id="collection" name="collection">    
+      <option value="Event">Event</option>
+      <option value="User">User</option>
+      <option value="Party">Party</option>
+      <option value="Song">Song</option>
+      <option value="Test">Test</option>
+</select>
+
+<p>
+<p>
+  
+<h4>Schema below (for reference)</h4>
+<label class="form_field"><span id="aggregator_name"></span></label>
+
+
+
+  <p>
+  Field : Value (only 1 pair is required)
+  <p>
+  <div class="form-group" style="float:left;">
+    <input type="text" class="btn btn-default" id="field1" placeholder="field1" name = "field1">
+  </div>
+  <div class="form-group">
+    <input type="text" class="btn btn-default" id="value1" placeholder="value1" name = "value1">
+  </div>
+
+ <p>
+  <div class="form-group" style="float:left;">
+    <input type="text" class="btn btn-default" id="field2" placeholder="field2" name = "field2">
+  </div>
+  <div class="form-group">
+    <input type="text" class="btn btn-default" id="value2" placeholder="value2" name = "value2">
+  </div>
+  <p>
+  <div class="form-group" style="float:left;">
+    <input type="text" class="btn btn-default" id="field3" placeholder="field3" name = "field3">
+  </div>
+  <div class="form-group">
+    <input type="text" class="btn btn-default" id="value3" placeholder="value3" name = "value3">
+  </div>
+  <p>
+  <div class="form-group" style="float:left;">
+    <input type="text" class="btn btn-default" id="field4" placeholder="field4" name = "field4">
+  </div>
+  <div class="form-group">
+    <input type="text" class="btn btn-default" id="value4" placeholder="value4" name = "value4">
+  </div>
+<p>
+  <div class="form-group" style="float:left;">
+    <input type="text" class="btn btn-default" id="field5" placeholder="field5" name = "field5">
+  </div>
+  <div class="form-group">
+    <input type="text" class="btn btn-default" id="value5" placeholder="value5" name = "value5">
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+<div class = "redirectBtn">
+<a href="/" class="btn btn-primary" role="button">Go Back</a>
+</div>
+<p>
+<p>
+
+
+<script>
+function notEmpty(){
+
+var e = document.getElementById("collection");
+var strUser = e.options[e.selectedIndex].value;
+if (strUser == "Event")
+{
+  strUser = "required: [time, description, user]"
+  + "<br/>\n" + "&emsp;" + "time: {type: date}"
+  + "<br/>\n" + "&emsp;" + "description: {type: string}"
+  + "<br/>\n" + "&emsp;" + "user: {type: User}"
+  + "<br/>\n" + "&emsp;" + "value: {type: integer, enum: [-1. 0, 1]}";
+
+}
+else if (strUser == "User")
+{
+  strUser = "required: [id, name]"
+  + "<br/>\n" + "&emsp;" + "id: {type: string}"
+  + "<br/>\n" + "&emsp;" + "name: {type: string}"
+  + "<br/>\n" + "&emsp;" + "party: {type: Party}"
+  + "<br/>\n" + "&emsp;" + "events: {type: array,"
+  + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: Event}}"
+  + "<br/>\n" + "&emsp;" + "anthem: {type: Song}";
+  
+}
+else if (strUser == "Party")
+{
+  strUser = "required: [id, host, playlist]"
+  + "<br/>\n" + "&emsp;" + "id: {type: string}"
+  + "<br/>\n" + "&emsp;" + "description: {type: string}"
+  + "<br/>\n" + "&emsp;" + "host: {type: User}"
+  + "<br/>\n" + "&emsp;" + "playlist: {type: array"
+  + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: Song}}"
+  + "<br/>\n" + "&emsp;" + "guests: {type: array"
+    + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: User}}"
+  + "<br/>\n" + "&emsp;" + "changes: {type: array"
+    + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: Event}}"
+    + "<br/>\n" + "&emsp;" + "password: {type: string}"
+
+  
+}
+else if (strUser == "Song")
+{
+
+  strUser = "required: [id]"
+  + "<br/>\n" + "&emsp;" + "id: {type: string}"
+  + "<br/>\n" + "&emsp;" + "title: {type: string}"
+  + "<br/>\n" + "&emsp;" + "artist: {type: string}"
+  + "<br/>\n" + "&emsp;" + "album: {type: string}"
+  + "<br/>\n" + "&emsp;" + "year: {type: integer}"
+  + "<br/>\n" + "&emsp;" + "score: {type: integer}"
+  
+}
+else if (strUser == "Test")
+{
+  strUser = "no schema - go wild";
+}
+document.getElementById('aggregator_name').innerHTML = strUser;
+
+}
+notEmpty()
+    
+    document.getElementById("collection").onchange = notEmpty;
+
+</script>
+
