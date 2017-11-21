@@ -65,6 +65,11 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
+app.get('/insert', function(req, res) {
+	res.render('insert');
+});
+
+
 app.get('/list', function(req, res) {
   var MongoClient = mongodb.MongoClient;
   var url = 'mongodb://localhost:27017/test';
@@ -73,23 +78,57 @@ app.get('/list', function(req, res) {
       console.log('Unable to connect to db', err);
     } else {
       console.log('Connection established');
+      var SongString = "";
+      var EventString = "";
+      var PartyString = "";
+      var SongString = "";
+      var UserString = "";
+      var TestString = "";
+      var TotalString = "";
       var cl = db.collection('test');
-      cl.find({}).toArray(function (err, result) {
-        if (err) {
-          res.send(err);
-        } else if (result.length > 0) {
-          res.render('collectionlist', {
-            "collectionlist": JSON.stringify(result)
-          });
-        } else {
-          res.render("empty");
-        }
-        db.close();
-      });
-    }
-  });
-});
 
+      cl.find().each( function(err, doc) {
+        if (err) console.log("unable to find");
+        else if (doc)
+        {
+          var unknown = false;
+          if (doc.Type === "Song")
+            SongString += JSON.stringify(doc);
+          else if (doc.Type === "Event")
+            EventString += JSON.stringify(doc);
+          else if (doc.Type === "Party")
+            PartyString += JSON.stringify(doc);
+          else if (doc.Type === "User")
+            UserString += JSON.stringify(doc);
+          else if (doc.Type === "Test")
+            TestString += JSON.stringify(doc);
+          else
+          {
+            console.log("unknown Type: " + doc.Type);
+            unknown = true;
+          }
+          if (!unknown)
+          {
+            TotalString += JSON.stringify(doc);
+          }
+
+          }
+          else
+          {
+            res.render('collectionlist', 
+              {"TotalString": TotalString, "SongString": SongString, 
+              "EventString": EventString, "PartyString": PartyString,
+              "UserString": UserString, "TestString": TestString,
+              "TotalString": TotalString}
+              );
+          }
+
+      });
+
+    }
+        db.close();
+ });
+});
 app.get('/clear', function(req, res) {
   var MongoClient = mongodb.MongoClient;
   var url = 'mongodb://localhost:27017/test';
@@ -112,6 +151,76 @@ app.use(function(req, res, next){
   next();
 });
 
+app.post('/data', function(req, res){
+	var collection = req.body.collection;
+
+	var field1 = req.body.field1;
+	var field2 = req.body.field2;
+	var field3 = req.body.field3;
+	var field4 = req.body.field4;
+	var field5 = req.body.field5;
+	var value1 = req.body.value1;
+	var value2 = req.body.value2;
+	var value3 = req.body.value3;
+	var value4 = req.body.value4;
+	var value5 = req.body.value5;
+
+//	console.log("collection: " + req.body.collection);
+//	console.log("data = ");
+//	console.log(req.body.field1 + " : " + req.body.value1);
+//	console.log(req.body.field2 + " : " + req.body.value2);
+//	console.log(req.body.field3 + " : " + req.body.value3);
+//	console.log(req.body.field4 + " : " + req.body.value4);
+//	console.log(req.body.field5 + " : " + req.body.value5);
+
+	//validate data
+
+	//open database
+
+      var MongoClient = mongodb.MongoClient;
+      var url = 'mongodb://localhost:27017/test';
+      MongoClient.connect(url, function(err, db) {
+        if (err){
+          console.log("Unable to connect to db", err);
+        } else {
+          console.log("Connection established");
+          var cl = db.collection("test");
+
+  		  var toAdd = {};
+        toAdd["Type"] = collection;
+  		  if (field1 != "" && value1 != "")
+  		  	toAdd[field1] = value1;
+  		  if (field2 != "" && value2 != "")
+  		  	toAdd[field2] = value2;
+  		  if (field3 != "" && value3 != "")
+  		  	toAdd[field3] = value3;
+  		  if (field4 != "" && value4 != "")
+  		  	toAdd[field4] = value4;
+		  if (field5 != "" && value5 != "")
+  		  	toAdd[field5] = value5;
+	  
+  		  var finalAdd = JSON.parse(JSON.stringify(toAdd));
+
+  		  //console.log("adding " + JSON.stringify(finalAdd) + " to " + collection);
+  		  cl.insert(finalAdd);
+
+
+        }
+       db.close();
+   });
+
+	//open collection
+
+	//add data to collection
+
+	//close database
+
+	//go back home
+
+
+	res.render('home');
+});
+
 app.post('/process', function(req, res){
   // Retrieve an access token
   spotifyApi.clientCredentialsGrant()
@@ -129,19 +238,19 @@ app.post('/process', function(req, res){
     {
       var artistString = req.body.artist;
 
-      var schema1 = {"songId": data.body.tracks.items[0].id, "name": data.body.tracks.items[0].name,
+      var schema1 = {"Type": "Song", "songId": data.body.tracks.items[0].id, "name": data.body.tracks.items[0].name,
                       "artist": req.body.artist, "album": data.body.tracks.items[0].album.name};
 
-      var schema2 = {"songId": data.body.tracks.items[1].id, "name": data.body.tracks.items[1].name,
+      var schema2 = {"Type": "Song", "songId": data.body.tracks.items[1].id, "name": data.body.tracks.items[1].name,
                       "artist": req.body.artist, "album": data.body.tracks.items[1].album.name};
 
-      var schema3 = {"songId": data.body.tracks.items[2].id, "name": data.body.tracks.items[2].name,
+      var schema3 = {"Type": "Song", "songId": data.body.tracks.items[2].id, "name": data.body.tracks.items[2].name,
                 "artist": req.body.artist, "album": data.body.tracks.items[2].album.name};
 
-      var schema4 = {"songId": data.body.tracks.items[3].id, "name": data.body.tracks.items[3].name,
+      var schema4 = {"Type": "Song", "songId": data.body.tracks.items[3].id, "name": data.body.tracks.items[3].name,
                 "artist": req.body.artist, "album": data.body.tracks.items[3].album.name};
 
-      var schema5 = {"songId": data.body.tracks.items[4].id, "name": data.body.tracks.items[4].name,
+      var schema5 = {"Type": "Song", "songId": data.body.tracks.items[4].id, "name": data.body.tracks.items[4].name,
                 "artist": req.body.artist, "album": data.body.tracks.items[4].album.name};
 
       var schemas = [schema1, schema2, schema3, schema4, schema5];
@@ -165,8 +274,7 @@ app.post('/process', function(req, res){
 
             }
         }
-    //      cl.insert([{"artist": artistString, "track1": track1, "track2": track2
-    //    , "track3": track3, "track4":track4, "track5": track5}]);
+
         }
        db.close();
 
