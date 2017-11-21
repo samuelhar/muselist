@@ -1,12 +1,41 @@
 <div class="page-header">
-	<h3>DB results</h3>
+  <h3>DB results</h3>
 </div>
 
-<div class="db-results">
-	<h4> Here's what we've got from the db: </h4>
-	<ul> <li>
-	{{collectionlist}}
-	</li> </ul>
+
+<div class="dbResults">
+
+<h4> Select collection to view in DB: </h4>
+    <select id="toggle-divs">
+        <option selected="selected" value="1">View All</option>
+        <option value="2">Event</option>
+        <option value="3">User</option>
+        <option value="4">Song</option>
+        <option value="5">Party</option>
+        <option value="6">Test</option>
+    </select>
+
+</div>
+<div class="dbResults">
+
+    <div class="div0">
+    <ul><li>{{TotalString}}</li></ul>
+    </div>
+    <div class="div1" style="display:none;">
+        <ul><li>{{EventString}}</li></ul>
+    </div>
+    <div class="div2" style="display:none;">
+       <ul><li>{{UserString}} </ul></li>
+    </div>
+    <div class="div3" style="display:none;">
+       <ul><li> {{SongString}}</ul></li>
+    </div>
+    <div class="div4" style="display:none;">
+     <ul><li> {{PartyString}} </ul></li>
+    </div>
+    <div class="div5" style="display:none;">
+     <ul><li> {{TestString}} </ul></li>
+    </div>
 </div>
 
 <div class = "redirectBtn">
@@ -22,3 +51,17 @@
     </div>
   </div>
 </form>
+
+<script>
+
+$(function () {
+  $('#toggle-divs').on('change', function() {
+    // toogle on only selected one
+    $(".dbResults .div" + (+this.value - 1)).toggle(true);
+    
+    // toggle off only the unseleted and visible
+    $(".dbResults > div:not('.div" + (+this.value - 1) + "'):visible").toggle(false);
+  });
+});
+
+</script>
