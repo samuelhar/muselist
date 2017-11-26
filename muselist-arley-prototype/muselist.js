@@ -18,8 +18,8 @@ var formidable = require('formidable');
 var SpotifyWebApi = require('spotify-web-api-node');
 
 var spotifyApi = new SpotifyWebApi({
-  clientId :'5045889d21114f6d9ef7f7b4501ea6ee',
-  clientSecret :'db156bc04c0d4cdab6505249eef4d0cd',
+  clientId :'',
+  clientSecret :'',
   
 });
 
