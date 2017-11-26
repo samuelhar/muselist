@@ -1,2 +1,2 @@
 # muselist
-This is the repository for the MuseList Web Application.
+Added ability to choose genre songs, add songs by artist, and play songs individually. 
