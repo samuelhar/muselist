@@ -16,43 +16,125 @@ var SpotifyWebApi = require('spotify-web-api-node');
 
 //ajv is used to validate the json
 var Ajv = require('ajv');
-var ajv = new Ajv({allErrors: true});
 
-var schema = {
-  "title": "Song",
-  "type": "object",
-  "required": ["songId", "name"],
+var songSchema = {
+      "type": "object",
+      "required": ["Type","songId", "name"],
+      "properties": {
+        "Type": {
+          "type":"string", "enum": ["Song"]
+        },
+        "songId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "artist": {
+          "type": "string"
+        },
+        "album": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "score": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties" : false
+    };
+
+var userSchema = {
+  "type":"object",
+  "required": ["Type", "userId", "name"],
   "properties": {
-    "songId": {
+    "Type": {
+      "type":"string", "enum": ["User"]
+          },
+  "userId": {
+    "type":"string"
+          },
+   "name": {
+      "type":"string"
+          },
+  "party": {
       "type": "string"
-    },
-    "title": {
-      "type": "string"
-    },
-    "artist": {
-      "type": "string"
-    },
-    "album": {
-      "type": "string"
-    },
-    "year": {
-      "type": "integer"
-    },
-    "score": {
-      "type": "integer"
-    }
-  }
+  },
+  "anthem": {
+            "type": "string"
+          }
+        },
+          "additionalProperties" : false
 };
 
-var validate = ajv.compile(schema);
+var eventSchema = {
+  "type":"object",
+  "required": ["Type", "eventId", "user"],
+  "properties": {
+    "Type": {
+      "type": "string", "enum": ["Event"]
+    },
+    "eventId": {
+      "type":"string"
+    },
+    "user": {
+      "type":"string"
+    },
+    "description": {
+      "type":"string"
+    },
+    "value": {
+      "type":"integer"
+    },
+    "time": {
+      "type": "string"
+    }
+  },
+  "additionalProperties" : false
+};
 
-//test very simply checks whatever input with the schema 
-function test(data) {
-  var valid = validate(data);
-  if (valid) console.log("Valid!");
-  else console.log("Invalid: " + ajv.errorsText(validate.errors));
-}
+var partySchema = {
+  "type": "object",
+  "required": ["Type", "partyId", "host", "playlist"],
+  "properties": {
+    "Type": {
+      "type": "string", "enum": ["Party"]
+    },
+    "partyId": {
+      "type":"string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "host" : {
+      "type": "string"
+    },
+    "playlist" : {
+      "type": "string"
+    },
+    "guests":{
+      "type": "array", "items": {"type": "string"}
+    },
+    "events": {
+      "type": "array", "items": {"type": "string"}
+    },
+    "password": {
+      "type": "string"
+    }
+    },
+        "additionalProperties": false
 
+};
+
+
+
+var ajv = new Ajv();
+var songValidate = ajv.compile(songSchema);
+var userValidate = ajv.compile(userSchema);
+var eventValidate = ajv.compile(eventSchema);
+var partyValidate = ajv.compile(partySchema);
 
 var spotifyApi = new SpotifyWebApi({
   clientId : process.env.CLIENT_ID,
@@ -81,7 +163,6 @@ app.get('/list', function(req, res) {
       var SongString = "";
       var EventString = "";
       var PartyString = "";
-      var SongString = "";
       var UserString = "";
       var TestString = "";
       var TotalString = "";
@@ -164,50 +245,66 @@ app.post('/data', function(req, res){
 	var value3 = req.body.value3;
 	var value4 = req.body.value4;
 	var value5 = req.body.value5;
-
-//	console.log("collection: " + req.body.collection);
-//	console.log("data = ");
-//	console.log(req.body.field1 + " : " + req.body.value1);
-//	console.log(req.body.field2 + " : " + req.body.value2);
-//	console.log(req.body.field3 + " : " + req.body.value3);
-//	console.log(req.body.field4 + " : " + req.body.value4);
-//	console.log(req.body.field5 + " : " + req.body.value5);
-
-	//validate data
-
-	//open database
-
-      var MongoClient = mongodb.MongoClient;
-      var url = 'mongodb://localhost:27017/test';
-      MongoClient.connect(url, function(err, db) {
-        if (err){
-          console.log("Unable to connect to db", err);
-        } else {
-          console.log("Connection established");
-          var cl = db.collection("test");
-
-  		  var toAdd = {};
-        toAdd["Type"] = collection;
-  		  if (field1 != "" && value1 != "")
-  		  	toAdd[field1] = value1;
-  		  if (field2 != "" && value2 != "")
-  		  	toAdd[field2] = value2;
-  		  if (field3 != "" && value3 != "")
-  		  	toAdd[field3] = value3;
-  		  if (field4 != "" && value4 != "")
-  		  	toAdd[field4] = value4;
-		  if (field5 != "" && value5 != "")
-  		  	toAdd[field5] = value5;
-	  
-  		  var finalAdd = JSON.parse(JSON.stringify(toAdd));
-
-  		  //console.log("adding " + JSON.stringify(finalAdd) + " to " + collection);
-  		  cl.insert(finalAdd);
+  var field6 = req.body.field6;
+  var value6 = req.body.value6;
 
 
-        }
-       db.close();
-   });
+  var toAdd = {};
+    toAdd["Type"] = collection;
+    if (field1 != "" && value1 != "")
+      toAdd[field1] = value1;
+    if (field2 != "" && value2 != "")
+      toAdd[field2] = value2;
+    if (field3 != "" && value3 != "")
+      toAdd[field3] = value3;
+    if (field4 != "" && value4 != "")
+      toAdd[field4] = value4;
+    if (field5 != "" && value5 != "")
+      toAdd[field5] = value5;
+    if (field6 != "" && value6 != "")
+      toAdd[field6] = value6;
+    
+  var finalAdd = JSON.parse(JSON.stringify(toAdd));
+
+  //validate
+  var valid;
+  if (collection === "Song")
+    valid = songValidate(finalAdd);
+  else if (collection === "User")
+    valid = userValidate(finalAdd);
+  else if (collection === "Party")
+    valid = partyValidate(finalAdd);
+  else if (collection === "Event")
+    valid = eventValidate(finalAdd);
+  else if (collection === "Test")
+    valid = true;
+  else
+    valid = null;
+  if (valid)
+  {
+    //open db
+    var MongoClient = mongodb.MongoClient;
+    var url = 'mongodb://localhost:27017/test';
+    MongoClient.connect(url, function(err, db) {
+      if (err) {
+        console.log("Unable to connect to db", err);
+      } else {
+        console.log("Connection established");
+        var cl = db.collection("test");
+
+    //add data to collection
+      cl.insert(finalAdd);
+      }
+      db.close();
+    });
+  }
+  else
+  {
+    console.log("Error. Invalid schema.");
+    console.log(finalAdd);
+  }
+    
+  	//open database
 
 	//open collection
 
@@ -265,8 +362,8 @@ app.post('/process', function(req, res){
         
           for (i=0; i< 5; i++)
           {
-            var valid = validate(schemas[i]);
-            if (!valid) console.log(validate.errors);
+            var valid = songValidate(schemas[i]);
+            if (!valid) console.log(songValidate.errors);
             else
             {
               console.log("validated!");
