@@ -88,36 +88,39 @@ var e = document.getElementById("collection");
 var strUser = e.options[e.selectedIndex].value;
 if (strUser == "Event")
 {
-  strUser = "required: [time, description, user]"
+  strUser = "required: [Type, eventId, user]"
+  + "<br/>\n" + "&emsp;" + "Type: 'Event' (included automatically)"
+  + "<br/>\n" + "&emsp;" + "eventId: {type: date}"
+  + "<br/>\n" + "&emsp;" + "user: {type: string (refers to userId)}"
   + "<br/>\n" + "&emsp;" + "time: {type: date}"
   + "<br/>\n" + "&emsp;" + "description: {type: string}"
-  + "<br/>\n" + "&emsp;" + "user: {type: User}"
   + "<br/>\n" + "&emsp;" + "value: {type: integer, enum: [-1. 0, 1]}";
 
 }
 else if (strUser == "User")
 {
-  strUser = "required: [id, name]"
-  + "<br/>\n" + "&emsp;" + "id: {type: string}"
+  strUser = "required: [Type, userId, name]"
+  + "<br/>\n" + "&emsp;" + "Type: 'User' (included automatically)"
+  + "<br/>\n" + "&emsp;" + "userId: {type: string}"
   + "<br/>\n" + "&emsp;" + "name: {type: string}"
-  + "<br/>\n" + "&emsp;" + "party: {type: Party}"
+  + "<br/>\n" + "&emsp;" + "party: {type: string (refers to partyId)}"
   + "<br/>\n" + "&emsp;" + "events: {type: array,"
-  + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: Event}}"
-  + "<br/>\n" + "&emsp;" + "anthem: {type: Song}";
+  + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: string (refers to eventId)}}"
+  + "<br/>\n" + "&emsp;" + "anthem: {type: string (refers to songId)}";
   
 }
 else if (strUser == "Party")
 {
-  strUser = "required: [id, host, playlist]"
-  + "<br/>\n" + "&emsp;" + "id: {type: string}"
+  strUser = "required: [Type, partyId, host, playlist]"
+  + "<br/>\n" + "&emsp;" + "Type: 'Party' (included automatically)"
+  + "<br/>\n" + "&emsp;" + "partyId: {type: string}"
   + "<br/>\n" + "&emsp;" + "description: {type: string}"
-  + "<br/>\n" + "&emsp;" + "host: {type: User}"
-  + "<br/>\n" + "&emsp;" + "playlist: {type: array"
-  + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: Song}}"
+  + "<br/>\n" + "&emsp;" + "host: {type: string (refers to userId)}"
+  + "<br/>\n" + "&emsp;" + "playlist: {type: string (refers to songId - note: change to array)}"
   + "<br/>\n" + "&emsp;" + "guests: {type: array"
-    + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: User}}"
+    + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: string (refers to userId)}}"
   + "<br/>\n" + "&emsp;" + "changes: {type: array"
-    + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: Event}}"
+    + "<br/>\n" + "&emsp;" + "&emsp;" + "items: {type: string (refers to eventId)}}"
     + "<br/>\n" + "&emsp;" + "password: {type: string}"
 
   
@@ -125,9 +128,10 @@ else if (strUser == "Party")
 else if (strUser == "Song")
 {
 
-  strUser = "required: [id]"
-  + "<br/>\n" + "&emsp;" + "id: {type: string}"
-  + "<br/>\n" + "&emsp;" + "title: {type: string}"
+  strUser = "required: [Type, songId, title]"
+  + "<br/>\n" + "&emsp;" + "Type: 'Song' (included automatically)"
+  + "<br/>\n" + "&emsp;" + "songId: {type: string}"
+  + "<br/>\n" + "&emsp;" + "name: {type: string}"
   + "<br/>\n" + "&emsp;" + "artist: {type: string}"
   + "<br/>\n" + "&emsp;" + "album: {type: string}"
   + "<br/>\n" + "&emsp;" + "year: {type: integer}"
