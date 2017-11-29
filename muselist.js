@@ -18,8 +18,8 @@ var formidable = require('formidable');
 var SpotifyWebApi = require('spotify-web-api-node');
 
 var spotifyApi = new SpotifyWebApi({
-  clientId :'',
-  clientSecret :'',
+  clientId :'5045889d21114f6d9ef7f7b4501ea6ee',
+  clientSecret :'db156bc04c0d4cdab6505249eef4d0cd',
   
 });
 
@@ -40,7 +40,21 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
+app.get('/login', function(req, res) {
+  var state = generateRandomString(16);
+  res.cookie(stateKey, state);
 
+  // your application requests authorization
+  var scope = 'user-read-private user-read-email playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative';
+  res.redirect('https://accounts.spotify.com/authorize?' +
+    querystring.stringify({
+      response_type: 'code',
+      clientId: clientId,
+      scope: scope,
+      redirect_uri: redirect_uri,
+      state: state
+    }));
+});
 
 
 app.use(function(req, res, next){
