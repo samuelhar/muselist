@@ -23,7 +23,6 @@ var spotifyApi = new SpotifyWebApi({
   
 });
 
-var authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
 
 var playlistId;
 
