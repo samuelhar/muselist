@@ -1,0 +1,63 @@
+<div class="page-header">
+  <h3>DB results</h3>
+</div>
+
+
+<div class="dbResults">
+
+<h4> Select collection to view in DB: </h4>
+    <select id="toggle-divs">
+        <option selected="selected" value="1">View All</option>
+        <option value="2">User</option>
+        <option value="3">Song</option>
+        <option value="4">Playlist</option>
+        <option value="5">Test</option>
+    </select>
+
+</div>
+<div class="dbResults">
+
+    <div class="div0">
+    <ul><li>{{TotalString}}</li></ul>
+    </div>
+    <div class="div1" style="display:none;">
+       <ul><li>{{UserString}} </ul></li>
+    </div>
+    <div class="div2" style="display:none;">
+       <ul><li> {{SongString}}</ul></li>
+    </div>
+    <div class="div3" style="display:none;">
+     <ul><li> {{PlaylistString}} </ul></li>
+    </div>
+    <div class="div4" style="display:none;">
+     <ul><li> {{TestString}} </ul></li>
+    </div>
+</div>
+
+<div class = "redirectBtn">
+<a href="/" class="btn btn-primary" role="button">Search Again</a>
+</div>
+
+<form class="formDB" role="form"
+  action="/clear" method="GET">
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-default">Clear DB</button>
+    </div>
+  </div>
+</form>
+
+<script>
+
+$(function () {
+  $('#toggle-divs').on('change', function() {
+    // toogle on only selected one
+    $(".dbResults .div" + (+this.value - 1)).toggle(true);
+    
+    // toggle off only the unseleted and visible
+    $(".dbResults > div:not('.div" + (+this.value - 1) + "'):visible").toggle(false);
+  });
+});
+
+</script>
