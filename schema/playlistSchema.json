@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": ["Type", "playlistId", "title"],
+  "properties": {
+    "Type": {
+      "type": "string", "enum": ["Playlist"]
+    },
+    "playlistId": {
+      "type":"string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "playlist" : {
+      "type": "array", "items": {"type": "string"}
+    }
+  },
+        "additionalProperties": false
+}
