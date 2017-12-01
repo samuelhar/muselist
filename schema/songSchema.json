@@ -1,0 +1,25 @@
+{
+      "type": "object",
+      "required": ["Type","songId", "title"],
+      "properties": {
+        "Type": {
+          "type":"string", "enum": ["Song"]
+        },
+        "songId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "artist": {
+          "type": "string"
+        },
+        "album": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
