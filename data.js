@@ -189,8 +189,14 @@ function validateCallBack(valid, query, cl, callback)
 	callback();
 }
 
+function postCallBack(res)
+{
+	res.render('home');
+}
+
 //export functions to be used outside data.js
 module.exports.post = post;
 module.exports.validate = validate;
 module.exports.list = list;
 module.exports.listCallBack = listCallBack;
+module.exports.postCallBack = postCallBack;
