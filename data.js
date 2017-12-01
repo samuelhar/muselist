@@ -28,7 +28,6 @@ var userValidate = ajv.compile(us);
 var playlistValidate = ajv.compile(ps);
 
 
-
 function validate(type, toAdd, callback) {
 	/* returns true if inputted collection schema is valid 
 	 * type is the value of the "Type" field ('Song', 'User', 'Playlist', or 'Test')
@@ -71,27 +70,14 @@ function post(type, query, callback) {
 		if (err) {
 			console.log('Unable to connect to db', err);
 		}
-		else {
+		else 
+		{
 
 			//after connecting, validate the data
 			console.log('Connection established');
 			var cl = db.collection("test");
-			var valid = validate(type, query, function(valid) {
-
-			//TODO: take out nested callback
-			if (valid)
-			{
-				//if data is valid, add it to the database
-				if (log) console.log("DATA.POST : JSON validated successfully");
-				cl.insert(query);
-				callback();
-			}
-			else
-			{
-				console.log(query + " failed validation...");
-				callback();
-			}
-
+			validate(type, query, function(valid) {
+				validateCallBack(valid, query, cl, callback);
 			});
 
 		}
@@ -167,7 +153,44 @@ function list(callback)  {
 
 }
 
+/* CALLBACK FUNCTIONS */
+
+
+//goes to the html page that lists out the database results
+function listCallBack (res, ret) {
+      if (ret)
+    {
+        res.render('collectionlist', 
+        {
+          "TotalString": ret[0], "SongString": ret[1], 
+         "PlaylistString": ret[2], "UserString": ret[3], 
+         "TestString": ret[4],});
+        }
+    else
+    {
+      console.log("invalid return array");
+      res.render('home');
+    }
+}
+
+//inserts the query into the collection (if it's valid)
+function validateCallBack(valid, query, cl, callback)
+{
+	if (valid)
+	{
+		//if data is valid, add it to the database
+		if (log) console.log("DATA.POST : JSON validated successfully");
+		cl.insert(query);
+	}
+	else
+	{
+		console.log(query + " falied validation...");
+	}
+	callback();
+}
+
 //export functions to be used outside data.js
 module.exports.post = post;
 module.exports.validate = validate;
 module.exports.list = list;
+module.exports.listCallBack = listCallBack;
