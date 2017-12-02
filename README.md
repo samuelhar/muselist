@@ -70,15 +70,15 @@ Data.js -> used for all things data related. Current features:
   
   
   #### addItemToList - updates the songslist in a playlist, or the playlist-list in a user
-  itemId: unique identifier for the item (songId, or playlistId)
-  
-  listId: unique identifier for the list (playlistId, or userId)
-  
-  itemType: type of the item (Song, or Playlist)
-  
-  listType: type of the list (Playlist, or User)
-  
-  callback: a function called upon completion
+    itemId: unique identifier for the item (songId, or playlistId)
+
+    listId: unique identifier for the list (playlistId, or userId)
+
+    itemType: type of the item (Song, or Playlist)
+
+    listType: type of the list (Playlist, or User)
+
+    callback: a function called upon completion
   
   
   
