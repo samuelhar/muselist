@@ -4,20 +4,20 @@ Added ability to choose genre songs, add songs by artist, and play songs individ
 
 Data.js -> used for all things data related. Current features:
 
-  validate - used to validate a JSON query. probably not needed outside of data.js
+  #### validate - used to validate a JSON query. probably not needed outside of data.js
   
   
-  list(callback) - gathers & organizes data and renders an html page that shows the contents
+  #### list(callback) - gathers & organizes data and renders an html page that shows the contents
   
     callback: a function list passes in the data array upon completion
     
     
-  clear - deletes all items in the database
+  #### clear - deletes all items in the database
   
     callback: a function called upon completion
     
     
-  post - validates & inserts a query to the database (use this for testing - actual posts should be done with insert)
+  #### post - validates & inserts a query to the database (use this for testing - actual posts should be done with insert)
   
     type: type of object ("User", "Song", "Playlist", or "Test")
     
@@ -26,11 +26,12 @@ Data.js -> used for all things data related. Current features:
     callback: a function called upon completion
     
     
-  connect - connects to the mongo server (probably not needed outside data.js)
+ #### connect - connects to the mongo server (probably not needed outside data.js)
   
     callback: a function called upon completion
     
-  insertUser - updates or inserts a user to the database
+    
+  #### insertUser - updates or inserts a user to the database
   
     userId: unique identifier for item
     
@@ -43,7 +44,7 @@ Data.js -> used for all things data related. Current features:
     callback: a function called upon completion
     
     
-  insertSong - updates or inserts a song to the database
+  #### insertSong - updates or inserts a song to the database
   
     songId: unique identifier for song
     
@@ -58,7 +59,7 @@ Data.js -> used for all things data related. Current features:
     callback: a function called upon completion
     
     
-  insertPlaylist - updates or inserts a playlist to the database
+  #### insertPlaylist - updates or inserts a playlist to the database
     playlistId: unique identifier for playlist
     
     title: name of playlist
@@ -66,6 +67,18 @@ Data.js -> used for all things data related. Current features:
     playlist: list of songs
     
     callback: a function called upon completion
+  
+  
+  #### addItemToList - updates the songslist in a playlist, or the playlist-list in a user
+  itemId: unique identifier for the item (songId, or playlistId)
+  
+  listId: unique identifier for the list (playlistId, or userId)
+  
+  itemType: type of the item (Song, or Playlist)
+  
+  listType: type of the list (Playlist, or User)
+  
+  callback: a function called upon completion
   
   
   
