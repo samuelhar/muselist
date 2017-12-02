@@ -20,6 +20,13 @@ var client_id = ''; // Your client id
 var client_secret = ''; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; 
 
+var access_token;
+
+var spotifyApi = new SpotifyWebApi({
+  clientId :'',
+  clientSecret :'',
+  
+});
 
 var generateRandomString = function(length) {
   var text = '';
@@ -65,6 +72,9 @@ app.get('/login', function(req, res) {
       redirect_uri: redirect_uri,
       state: state
     }));
+
+
+  //create playlist here
 });
 
 app.get('/continue', function(req, res){
@@ -103,7 +113,7 @@ app.get('/callback', function(req, res) {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        var access_token = body.access_token,
+        access_token = body.access_token,
             refresh_token = body.refresh_token;
 
         var options = {
@@ -389,6 +399,22 @@ numbers_generated = [];
 });
 
 
+app.post('/createPlaylist', function(req, res) {
+  //creates a playlist
+  var createdplaylist = {
+          url: 'https://api.spotify.com/v1/users/' + 'griffin123b' + '/playlists',
+          headers: { 'Authorization': 'Bearer ' + access_token },
+          body: {"description": "Creates Muselist Playlist",
+                 "public": false,
+                 "name": "Muselist Playlist"},
+          json: true
+  };
+  request.post(createdplaylist, function(error, response, body) {
+    createdplaylistid = body.id;
+    //console.log("User Created Playlist Information")
+    //console.log(body)
+  })
+})
 
 
 app.use(function(req, res){
