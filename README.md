@@ -4,26 +4,15 @@ Added ability to choose genre songs, add songs by artist, and play songs individ
 
 Data.js -> used for all things data related. Current features:
   validate - used to validate a JSON query. probably not needed outside of data.js
-  post - adds a JSON query to the database assuming it is valid (see above).
   list - gathers & organizes data and renders an html page that shows the contents
+  clear - deletes all items in the database
+  insertItem - inserts (or updates if it already exists) a Song, User, or Playlist to the database
+  connect - connects to the mongo server (probably not needed outside data.js)
   
-  to use any of these functions start with:
-     var data = require('./data');
+  Make sure to include the following fields to the .env file:
+  DATABASE_URL = mongodb://localhost:27017/test (note: subject to change)
+  DATABASE_COLLECTION = test (note: subject to change)
   
-  then to post a new query:
-      data.post(Type, query, function () {
-        data.postCallBack(res);
-       });
-
- where Type is the type of the query ('Song', 'Playlist', 'User', or 'Test')
- and query is the JSON query to be added
- Note that data.postCallBack(res) can be replaced
-
-   to list database data:
-         data.list( function(ret) {
-           data.listCallBack(res, ret);
-         });
-
-   where ret is the array of data returned by data.list
-
+  Also start the database before doing any connections (the terminal command is simply 'mongod')
   
+  And finally type in 'npm install' to install all the packages needed (ajv & mongodb)
