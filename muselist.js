@@ -18,10 +18,11 @@ var formidable = require('formidable');
 var SpotifyWebApi = require('spotify-web-api-node');
 
 var spotifyApi = new SpotifyWebApi({
-  clientId :'5045889d21114f6d9ef7f7b4501ea6ee',
-  clientSecret :'db156bc04c0d4cdab6505249eef4d0cd',
+  clientId :'',
+  clientSecret :'',
   
 });
+
 
 
 var playlistId;
@@ -40,21 +41,7 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
-app.get('/login', function(req, res) {
-  var state = generateRandomString(16);
-  res.cookie(stateKey, state);
 
-  // your application requests authorization
-  var scope = 'user-read-private user-read-email playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative';
-  res.redirect('https://accounts.spotify.com/authorize?' +
-    querystring.stringify({
-      response_type: 'code',
-      clientId: clientId,
-      scope: scope,
-      redirect_uri: redirect_uri,
-      state: state
-    }));
-});
 
 
 app.use(function(req, res, next){
@@ -63,9 +50,7 @@ app.use(function(req, res, next){
 });
 
 app.post('/process', function(req, res){
-  // Retrieve an access token
-  array_song = [];
-  songs = [];
+
   spotifyApi.clientCredentialsGrant()
 .then(function(data) {
   // Set the access token on the API object so that it's used in all future requests
@@ -101,37 +86,124 @@ app.post('/process', function(req, res){
 
     numbers_generated = [];
   
-      res.render('user', {song: song_id});
+      res.render('home', {songs_played: array_song});
   }).catch(function(err) {
     console.log('Unfortunately, something has gone wrong.', err.message);
   });
 });
 
 
-// app.post('/user', function(req, res){
-//   // Retrieve an access token
-//   // spotifyApi.authorizationCodeGrant(authorizationCode)
-//   // .then(function(data) {
-//     // Set the access token on the API object so that it's used in all future requests
-//     //spotifyApi.setAccessToken(data.body['access_token']);
 
-//     res.render('user');
+app.post('/search_for_artist', function(req, res){
+ 
+    res.render('search_for_artist');
 
-//   //console.log(req.body.selectpicker);
+});
 
 
-//   //   return spotifyApi.createPlaylist('1250209420', 'My awesome playlist'); //name of search field is "artist"
-//   // }).then(function(data) {
+app.post('/remove_songs', function(req, res){
+ 
+    res.render('remove_songs',{songs_played: array_song});
 
-//   //   //console.log(data.body);
-//   //   res.render('user', {email: data.body.email}); //send artist and tracks to the search-results.handlebars page
-//   //  // console.log(data.body.email);
+});
 
-//   // }).catch(function(err) {
-//   //   console.log('Unfortunately, something has gone wrongggggg.', err.message);
-//   // });
-// });
-// //
+
+app.post('/search_for_song', function(req, res){
+ 
+    res.render('search_for_song');
+
+});
+
+app.post('/clear', function(req, res){
+  array_song=[];
+  songs=[];
+    res.render('home');
+
+});
+
+app.post('/finalize', function(req, res){
+
+      var j, x, i;
+    for (i = songs.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = songs[i];
+        songs[i] = songs[j];
+        songs[j] = x;
+    }
+ 
+    res.render('display',{songs_played:songs} );
+
+});
+
+app.post('/delete', function(req, res){
+
+  if (req.body.song_number > 0){
+    array_song.splice(req.body.song_number-1,1);
+    songs.splice(req.body.song_number-1,1);
+
+  }
+  res.render('remove_songs',{songs_played: array_song});
+});
+
+app.post('/song_search', function(req, res){
+  // Retrieve an access token
+  //array_song = [];
+  //songs = [];
+  spotifyApi.clientCredentialsGrant()
+.then(function(data) {
+  // Set the access token on the API object so that it's used in all future requests
+  spotifyApi.setAccessToken(data.body['access_token']);
+
+
+  
+
+    return spotifyApi.searchTracks('track:'+ req.body.song_name + ' artist:'+ req.body.artist)  //'track:Alright artist:Kendrick Lamar'
+  }).then(function(data) {
+
+
+      
+
+  array_song.push(data.body.tracks.items[0].name + " by, " + data.body.tracks.items[0].artists[0].name);
+  songs.push(song_id + String(data.body.tracks.items[0].id));
+
+  
+
+
+    //console.log(data.body.tracks.items[0]);
+  
+     res.render('home', {songs_played: array_song});
+  }).catch(function(err) {
+    console.log('Unfortunately, something has gone wrong.', err.message);
+  });
+});
+
+
+
+
+app.post('/user', function(req, res){
+  // Retrieve an access token
+  // spotifyApi.authorizationCodeGrant(authorizationCode)
+  // .then(function(data) {
+    // Set the access token on the API object so that it's used in all future requests
+    //spotifyApi.setAccessToken(data.body['access_token']);
+
+    res.render('user');
+
+  //console.log(req.body.selectpicker);
+
+
+  //   return spotifyApi.createPlaylist('1250209420', 'My awesome playlist'); //name of search field is "artist"
+  // }).then(function(data) {
+
+  //   //console.log(data.body);
+  //   res.render('user', {email: data.body.email}); //send artist and tracks to the search-results.handlebars page
+  //  // console.log(data.body.email);
+
+  // }).catch(function(err) {
+  //   console.log('Unfortunately, something has gone wrongggggg.', err.message);
+  // });
+});
+//
 
 
 
@@ -139,7 +211,7 @@ var playlist_id;
 
 
 
-app.post('/display', function(req, res){
+app.post('/genres', function(req, res){
 
 
   numbers_generated = [];
@@ -289,9 +361,154 @@ numbers_generated = [];
 
   }
 
+    numbers_generated = [];
+  spotifyApi.getPlaylistsForCategory('rock', { //latin pop hiphop chill country rock
+      country: 'US',
+      limit : 2,
+      offset : 0
+    })
+  .then(function(data) {
+   
+   playlist_id = String(data.body.playlists.items[Math.floor(Math.random() * 2)].id);
+   
+   spotifyApi.getPlaylistTracks('spotify', playlist_id, { 'offset' : 0, 'limit' : 20, 'fields' : 'items' })
+  .then(function(data) {
+
+   // console.log(req.body.rap_select);
+    for (i = 0; i < req.body.total_rock; i++){
+      var random = Math.floor(Math.random() * 20);
+      while (true){
+        
+        if (numbers_generated.includes(random)){
+          random = Math.floor(Math.random() * 20);
+        }
+
+        else {
+          numbers_generated.push(random);
+          break;
+        }
+      }
+      
 
 
-    res.render('display', {artist: array_artist, tracks: array_song, songs_played:songs}); //send artist and tracks to the search-results.handlebars page
+    array_song.push(data.body.items[random].track.name + " by, " + data.body.items[random].track.artists[0].name);
+    songs.push(song_id + String(data.body.items[random].track.id));
+
+  }
+
+      numbers_generated = [];
+  spotifyApi.getPlaylistsForCategory('party', { //latin pop hiphop chill country rock party
+      country: 'US',
+      limit : 2,
+      offset : 0
+    })
+  .then(function(data) {
+   
+   playlist_id = String(data.body.playlists.items[Math.floor(Math.random() * 2)].id);
+   
+   spotifyApi.getPlaylistTracks('spotify', playlist_id, { 'offset' : 0, 'limit' : 20, 'fields' : 'items' })
+  .then(function(data) {
+
+   // console.log(req.body.rap_select);
+    for (i = 0; i < req.body.total_party; i++){
+      var random = Math.floor(Math.random() * 20);
+      while (true){
+        
+        if (numbers_generated.includes(random)){
+          random = Math.floor(Math.random() * 20);
+        }
+
+        else {
+          numbers_generated.push(random);
+          break;
+        }
+      }
+      
+
+
+    array_song.push(data.body.items[random].track.name + " by, " + data.body.items[random].track.artists[0].name);
+    songs.push(song_id + String(data.body.items[random].track.id));
+
+  }
+
+      numbers_generated = [];
+  spotifyApi.getPlaylistsForCategory('punk', { //latin pop hiphop chill country rock party
+      country: 'US',
+      limit : 2,
+      offset : 0
+    })
+  .then(function(data) {
+   
+   playlist_id = String(data.body.playlists.items[Math.floor(Math.random() * 2)].id);
+   
+   spotifyApi.getPlaylistTracks('spotify', playlist_id, { 'offset' : 0, 'limit' : 20, 'fields' : 'items' })
+  .then(function(data) {
+
+   // console.log(req.body.rap_select);
+    for (i = 0; i < req.body.total_punk; i++){
+      var random = Math.floor(Math.random() * 20);
+      while (true){
+        
+        if (numbers_generated.includes(random)){
+          random = Math.floor(Math.random() * 20);
+        }
+
+        else {
+          numbers_generated.push(random);
+          break;
+        }
+      }
+      
+
+
+    array_song.push(data.body.items[random].track.name + " by, " + data.body.items[random].track.artists[0].name);
+    songs.push(song_id + String(data.body.items[random].track.id));
+
+  }
+
+        numbers_generated = [];
+  spotifyApi.getPlaylistsForCategory('reggae', { //latin pop hiphop chill country rock party
+      country: 'US',
+      limit : 2,
+      offset : 0
+    })
+  .then(function(data) {
+   
+   playlist_id = String(data.body.playlists.items[Math.floor(Math.random() * 2)].id);
+   
+   spotifyApi.getPlaylistTracks('spotify', playlist_id, { 'offset' : 0, 'limit' : 20, 'fields' : 'items' })
+  .then(function(data) {
+
+   // console.log(req.body.rap_select);
+    for (i = 0; i < req.body.total_reggae; i++){
+      var random = Math.floor(Math.random() * 20);
+      while (true){
+        
+        if (numbers_generated.includes(random)){
+          random = Math.floor(Math.random() * 20);
+        }
+
+        else {
+          numbers_generated.push(random);
+          break;
+        }
+      }
+      
+
+
+    array_song.push(data.body.items[random].track.name + " by, " + data.body.items[random].track.artists[0].name);
+    songs.push(song_id + String(data.body.items[random].track.id));
+
+  }
+
+
+  //mix up song order
+
+  
+
+
+
+    res.render('home', {artist: array_artist, tracks: array_song, songs_played:array_song}); //send artist and tracks to the search-results.handlebars page
 
   }).catch(function(err) {
     console.log('Unfortunately, something has gone wrong.', err.message);
@@ -311,6 +528,18 @@ numbers_generated = [];
 
 });
 
+  });
+
+});
+
+  });
+
+});
+  });
+
+});
+});
+});
 
 
 

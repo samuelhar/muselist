@@ -25,7 +25,7 @@
 <!--         <iframe src= {{id_song}}
         frameborder="0" allowtransparency="true"></iframe> -->
 
-<div class="box">    
+<!-- <div class="box">    
         <label for="qty"><abbr title="Quantity">Qty</abbr></label>
         <input id="qty" value="0" />
         <button id="down" onclick="modify_qty(-1)">-1</button>
@@ -44,10 +44,37 @@ function modify_qty(val) {
     return new_qty;
 }
 </script>
-  </div>
+  </div> -->
 
 
-  <div class = "redirectBtn">
+<form class="formSearchbar" role="form"
+  action="/clear?form=clear" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="finish" class="btn btn-default">Home Page</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+
+<form class="formSearchbar" role="form"
+  action="/save_data?form=save_data" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="data" class="btn btn-default">Save Playlist</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+<!--   <div class = "redirectBtn">
 <a href="/" class="btn btn-primary" role="button">Search Again</a>
-</div>
+</div> -->
 
