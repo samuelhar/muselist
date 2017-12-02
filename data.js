@@ -57,8 +57,30 @@ function list(callback) {
 	});
 }
 
+function insertSong (songId, title, artist, album, year, callback)
+{
+	insertItem("Song", songId, title, artist, album, year, function() {
+		callback();
+	});
+
+}
+
+function insertUser(userId, name, anthem, playlists, callback)
+{
+	insertItem("User", userId, name, anthem, playlists, null, function() {
+		callback();
+	});
+}
+
+function insertPlaylist(playlistId, title, playlist, callback)
+{
+	insertItem("Playlist", playlistId, title, playlist, null, null, function() {
+		callback();
+	});
+}
+
 function insertItem (type, id, f1, f2, f3, f4, callback) {
-	/* inserts a song to the database. if it already exists (identified by the songId) then it is updated
+	/* inserts an item to the database. if it already exists (identified by the songId) then it is updated
 	 * any fields === empty string are ignored (note the query might fail validation)
 	 *
 	 * argument order should be:
@@ -241,8 +263,11 @@ function clear(callback) {
 module.exports.post = post;
 module.exports.validate = validate;
 module.exports.list = list;
-module.exports.insertItem = insertItem;
+module.exports.insertSong = insertSong;
+module.exports.insertUser = insertUser;
+module.exports.insertPlaylist = insertPlaylist;
 module.exports.clear = clear;
+module.exports.connect = connect;
 
 /* * * * * * * * * * * HELPER FUNCTIONS * * * * * * * * * * * */
 
