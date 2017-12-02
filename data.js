@@ -57,6 +57,61 @@ function list(callback) {
 	});
 }
 
+function addItemToList(itemId, listId, itemType, listType, callback)
+{
+	if (log) console.log("DATA.ADD_TO_PLAYLIST : begin add to playlist.");
+	//connect to server
+	connect(function(db) {
+		if (db === null) callback();
+		else
+		{
+			var cl = db.collection(process.env.DATABASE_COLLECTION);
+			//find song (make sure it exists)	
+			findItem(itemType, itemId, cl, function(item) {
+				if (item === null || item.length < 1)
+				{
+					console.log("error. item does not exist.");
+					db.close(); 
+					if (log) console.log("DATA.ADD_TO_LIST : calling callback...");
+					callback();
+				}
+				else
+				{
+					if (log) console.log("DATA.ADD_TO_LIST : item found, now searching for list");
+					//find playlist (make sure it exists)
+					findItem(listType, listId, cl, function(list){
+						if (list === null || list.length < 1)
+						{
+							console.log("error. playlist does not exist.");
+							db.close();
+							if (log) console.log("DATA.ADD_TO_LIST : calling callback...");
+							callback();
+						}
+						else
+						{
+							if (log) console.log("DATA.ADD_TO_LIST : list found, now updating");
+							console.log();
+							//get playlist of songs & append new song]
+							var newP;
+							if (listType === "Playlist")
+								newP = list[0]["playlist"];
+							else
+								newP = list[0]["playlists"];
+	  						pushList(newP, itemId, listId, listType, function() {
+								if (log) console.log("DATA.ADD_TO_LIST : calling callback...");
+	  							callback();
+	  						})
+						}
+
+					});
+
+				}
+			});
+
+		}
+	});
+}
+
 function insertSong (songId, title, artist, album, year, callback)
 {
 	insertItem("Song", songId, title, artist, album, year, function() {
@@ -80,6 +135,8 @@ function insertPlaylist(playlistId, title, playlist, callback)
 }
 
 function insertItem (type, id, f1, f2, f3, f4, callback) {
+
+	// TODO : REMOVE FIELDS THAT ARE NULL OR KEEP THEM THE SAME
 	/* inserts an item to the database. if it already exists (identified by the songId) then it is updated
 	 * any fields === empty string are ignored (note the query might fail validation)
 	 *
@@ -268,11 +325,51 @@ module.exports.insertUser = insertUser;
 module.exports.insertPlaylist = insertPlaylist;
 module.exports.clear = clear;
 module.exports.connect = connect;
+module.exports.addItemToList = addItemToList;
 
 /* * * * * * * * * * * HELPER FUNCTIONS * * * * * * * * * * * */
+function pushList (newP, itemId, listId, type, callback)
+//updates the playlist to include the new song
+//	 pushList(newP, songId, playlistId, listType, function() {
+{
+	contains = false;
 
-//inserts the query into the collection (if it's valid)
+	//check if duplicate
+	for (item in newP)
+	{
+		if (newP[item] === itemId)
+			contains = true;
+	}
+	if (contains)
+	{
+		console.log("playlist already contains the song");
+		callback();
+	}
+	else
+	{
+		newP.push(itemId);
+
+
+		//Update playlist
+		if (type === "Playlist")
+		{
+			insertPlaylist(listId, "", newP, function(){
+				callback();
+			});
+		}
+		else
+		{
+			insertUser(listId, "", "", newP, function() {
+				callback();
+			});
+		}
+	}
+
+}
+
 function validateCallBack(valid, query, cl, callback)
+//inserts the query into the collection (if it's valid)
+
 {
 	if (valid)
 	{
