@@ -3,7 +3,6 @@ var express = require('express');
 require('dotenv').config();
 
 var app = express();
-
 app.disable('x-powered-by');
 
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
@@ -18,8 +17,8 @@ var formidable = require('formidable');
 var SpotifyWebApi = require('spotify-web-api-node');
 
 var spotifyApi = new SpotifyWebApi({
-  clientId :'',
-  clientSecret :'',
+  clientId :process.env.CLIENT_ID,
+  clientSecret :process.env.CLIENT_SECRET,
   
 });
 
@@ -91,7 +90,6 @@ app.post('/process', function(req, res){
     console.log('Unfortunately, something has gone wrong.', err.message);
   });
 });
-
 
 
 app.post('/search_for_artist', function(req, res){
@@ -542,6 +540,100 @@ numbers_generated = [];
 });
 
 
+
+
+/*
+ *        DATABASE STUFF
+ *
+ */
+ 
+var data = require('./data');
+
+app.get('/cleardata', function(req, res) {
+  data.clear(function() {
+    res.render('clear');
+  });
+});
+
+app.get('/viewdata', function(req, res) {
+  data.list(function (ret) {
+    listCallBack(res, ret);
+  });
+});
+
+app.get('/savedata', function(req, res) {
+
+  //first, create the playlist
+  var playlistId = Math.floor((Math.random(8999) + 1000)).toString();
+  var title = "Playlist Numero " + playlistId;
+  data.insertPlaylist(playlistId, title, [], function() {
+
+    var songIdList = [];
+    var songTitleList = [];
+    var songArtistList = [];
+    //initialize songs array
+    for (i in array_song)
+    {
+      var toAdd = array_song[i].split(" by, ");
+      songTitleList.push(toAdd[0]);
+      songArtistList.push(toAdd[1]);
+      songIdList.push(songs[i]);
+
+    }
+
+    //insert songs into the database & playlist
+    createSongs(songIdList, songTitleList, songArtistList, playlistId, function() {
+      console.log("WE DONE NOW");
+      res.render('home');
+    });
+
+  });
+
+});
+
+function createSongs (songIdList, songTitleList, songArtistList, playlistId, callback) {
+  console.log(songIdList.length + " songs left to add...");
+  if (songIdList.length < 1)
+    callback();
+  else
+  {
+    //insert song into database
+    data.insertSong(songIdList[0], songTitleList[0], songArtistList[0], "", 0, function() {
+
+      //insert song into playlist
+      data.addItemToList(songIdList[0], playlistId, "Song", "Playlist", function() {
+
+        //now we're done, time for the rest
+        console.log(songTitleList[0] + " added to database & playlist");
+        createSongs(songIdList.slice(1), songTitleList.slice(1), songArtistList.slice(1), playlistId, callback);
+      });
+
+    });
+  }
+}
+
+function listCallBack (res, ret) {
+      if (ret)
+    {
+        res.render('collectionlist', 
+        {
+          "TotalString": ret[0], "SongString": ret[1], 
+         "PlaylistString": ret[2], "UserString": ret[3], 
+         "TestString": ret[4],});
+        }
+    else
+    {
+      console.log("invalid return array");
+      res.render('home');
+    }
+}
+
+
+/*
+ *
+ *        END DATABASE STUFF
+ *
+ */
 
 app.use(function(req, res){
   res.type('text/html');
