@@ -1,6 +1,7 @@
 <div class ="page-header">
   <h3>Current Playlist</h3>
 </div>
+<p>Welcome! Please <a href="/login">log in</a>.</p>
 
 <h4> Your Current Playlist: </h4>
 
@@ -84,14 +85,15 @@
 </form>
 
 <form class="formSearchbar" role="form"
-  action="/viewdata" method="GET">
+   action="/viewdata" method="GET">
+ 
+   <div class="form-group">
+     <div class="col-sm-4">
+       <button type="view_data" class="btn btn-default">View Database</button>
+     </div>
+   </div>
+ </form>
 
-  <div class="form-group">
-    <div class="col-sm-4">
-      <button type="view_data" class="btn btn-default">View Database</button>
-    </div>
-  </div>
-</form>
 
 </div> <!-- End of searchbar -->
 

@@ -6,15 +6,16 @@
 
 
 
-<h4> Here are some songs: </h4>
+<h4> Here is your playlist: </h4>
 
+<iframe src= {{playlist}} width="300" height="380" frameborder="0" allowtransparency="true"> </iframe>
 
-	<ul>
+<!-- 	<ul>
 	{{#each songs_played }}
 		<iframe src= {{this}} frameborder="0" allowtransparency="true"> </iframe>
 		<br>
 	{{/each}}
-	</ul>
+	</ul> -->
 
 
 
@@ -62,7 +63,7 @@ function modify_qty(val) {
 
 
 <form class="formSearchbar" role="form"
-  action="/savedata" method="GET">
+   action="/savedata?form=savadata" method="GET">
 
 
 
@@ -74,6 +75,9 @@ function modify_qty(val) {
 
 </form>
 
+
+<a href= {{my_tweet}} class="twitter-share-button">Tweet</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <!--   <div class = "redirectBtn">
 <a href="/" class="btn btn-primary" role="button">Search Again</a>
 </div> -->
