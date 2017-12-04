@@ -1,0 +1,22 @@
+{
+  "type":"object",
+  "required": ["Type", "userId", "name"],
+  "properties": {
+    "Type": {
+      "type":"string", "enum": ["User"]
+          },
+  "userId": {
+    "type":"string"
+          },
+   "name": {
+      "type":"string"
+          },
+  "playlists": {
+      "type": "array", "items": {"type": "string"}
+  },
+  "anthem": {
+            "type": "string"
+          }
+        },
+          "additionalProperties" : false
+}
