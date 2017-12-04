@@ -193,12 +193,7 @@ app.get('/login',
 app.get('/login/twitter',
   passport.authenticate('twitter'));
 
-// app.get('/login/twitter/return', 
-//   passport.authenticate('twitter', { failureRedirect: '/login' }),
-//   function(req, res) {
-//     //console.log("we are here");
-//     res.render('home', {user: req.user});
-//   });
+
 app.get('/login/twitter/return', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
@@ -283,7 +278,7 @@ app.post('/search_for_song', function(req, res){
 app.post('/clear', function(req, res){
   array_song=[];
   songs=[];
-    res.render('home');
+  res.render('home');
 
 });
 
@@ -298,20 +293,14 @@ app.post('/finalize', function(req, res){
     }
 
 
+
     var final_url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + final_playlistId + '/tracks?uris=';
 
     for (i = songs.length - 1; i > -1; i--) {
        final_url = final_url + songs[i] + ',';
        console.log(final_url);
     }
-  // var createdplaylist = {
-  //         url: 'https://api.spotify.com/v1/users/' + '1250209420' + '/playlists/0yonanYPcSOJzNDqcWrejH/tracks?uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M',
-  //         headers: { 'Authorization': 'Bearer ' + access_token },
-  //         body: {"description": "Creates Muselist Playlist",
-  //                "public": true,
-  //                "name": "Muselist Playlist3"},
-  //         json: true
-  // };
+
           var createdplaylist = {
           //url: 'https://api.spotify.com/v1/users/' + username + '/playlists/' + final_playlistId + '/tracks?uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M',
           url: final_url,
@@ -323,22 +312,11 @@ app.post('/finalize', function(req, res){
   };
 
     request.post(createdplaylist, function(error, response, body) {
-  //   createdplaylistid = body.id;
-    //final_playlistId = body.id;
+
       var final_playlist = 'https://open.spotify.com/embed?uri=spotify:user:'+username+':playlist:' + final_playlistId;
       var tweet ='https://twitter.com/intent/tweet?text=This%20is%20my%20new%20Party%20PlaylistId:%20'+ final_playlistId;
-      //https://twitter.com/intent/tweet?text=Hello%20worldo
-  // var createdplaylist = {
-  //         url: 'https://api.spotify.com/v1/users/' + '1250209420' + '/playlists/4PKIxql9UZHamEeCVJRfAO/tracks?uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M',
-  //         headers: { 'Authorization': 'Bearer ' + access_token },
-  //         body: {"description": "Creates Muselist Playlist",
-  //                "public": true,
-  //                "name": "Muselist Playlist3"},
-  //         json: true
-  // };
-    //console.log("User Created Playlist Information")
-    //res.render('home');
-    res.render('display',{songs_played:songs, playlist: final_playlist, my_tweet:tweet} );
+      songs=[];
+    res.render('display',{playlist: final_playlist, my_tweet:tweet} );
    
   })
     
@@ -398,11 +376,14 @@ app.post('/user', function(req, res){
 
 });
 
+app.post('/return_home', function(req, res){
 
+    res.render('home', {songs_played: array_song});
+
+});
 
 
 var playlist_id;
-
 
 
 app.post('/genres', function(req, res){
@@ -737,6 +718,8 @@ numbers_generated = [];
 
 app.post('/createPlaylist', function(req, res) {
   //creates a playlist
+  array_song=[];
+  songs=[];
   var createdplaylist = {
           url: 'https://api.spotify.com/v1/users/' + username + '/playlists',
           headers: { 'Authorization': 'Bearer ' + access_token },
@@ -758,15 +741,7 @@ app.post('/createPlaylist', function(req, res) {
   //   createdplaylistid = body.id;
     final_playlistId = body.id;
 
-  // var createdplaylist = {
-  //         url: 'https://api.spotify.com/v1/users/' + '1250209420' + '/playlists/4PKIxql9UZHamEeCVJRfAO/tracks?uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M',
-  //         headers: { 'Authorization': 'Bearer ' + access_token },
-  //         body: {"description": "Creates Muselist Playlist",
-  //                "public": true,
-  //                "name": "Muselist Playlist3"},
-  //         json: true
-  // };
-    //console.log("User Created Playlist Information")
+
     res.render('home');
    // console.log(createdplaylistid)
   })
@@ -786,10 +761,72 @@ app.get('/viewdata', function(req, res) {
   });
 });
 
+app.get('/switchdata', function(req, res) {
+  var playlist = req.query.playlistId;
+  data.getAllItems("Playlist", function(ret) {
+    if (ret === null)
+    {
+      console.log("error getting data.");
+      res.render('home');
+    }
+    else
+    {
+      var idList = ret[0];
+      var nameList = ret[1];
+      var retList = [];
+      console.log("switch to playlist: " + idList[playlist-1] + " name: " + nameList[playlist-1]);
+      data.getSongsByPlaylist(idList[playlist-1], function(retList) {
+        if (retList === null)
+        {
+          console.log("error getting data.");
+          res.render('home');
+        }
+        else
+        {
+          console.log("RETLIST : " + retList);
+          songs = retList;
+          playlistId = idList[playlist-1];
+          res.render('home');
+        }
+      });
+
+    }
+  });
+
+  //switch to playlist num playlistId
+
+});
+app.get('/selectdata', function(req, res) {
+  data.getAllItems("Playlist", function(ret) {
+    if (ret === null)
+    {
+      console.log("error getting data.");
+      res.render('home');
+    }
+    else
+    {
+      var idList = ret[0];
+      var retList = [];
+      getAllSongsByPlaylist(idList, retList, function(retList) {
+        if (retList === null)
+        {
+          console.log("error getting playlists");
+          res.render('home');
+        }
+        else
+        {
+          res.render('select_playlist', {songsList: retList});
+        }
+      });
+
+    }
+  });
+});
+
 app.get('/savedata', function(req, res) {
 
   //first, create the playlist
-  var playlistId = Math.floor((Math.random(8999) + 1000)).toString();
+  var playlistId = (Math.floor(Math.random() * (9999-1000)) + 1000).toString();
   var title = "Playlist Numero " + playlistId;
   data.insertPlaylist(playlistId, title, [], function() {
 
@@ -808,7 +845,6 @@ app.get('/savedata', function(req, res) {
 
     //insert songs into the database & playlist
     createSongs(songIdList, songTitleList, songArtistList, playlistId, function() {
-      console.log("WE DONE NOW");
       res.render('home');
     });
 
@@ -816,9 +852,29 @@ app.get('/savedata', function(req, res) {
 
 });
 
+function getAllSongsByPlaylist(idList, retList, callback)
+{
+  if (idList.length < 1)
+  {
+    callback(retList);
+  }
+  else
+  {
+    data.getSongsByPlaylist(idList[0], function(ret) {
+      if (ret === null)
+      {
+        callback(null);
+      }
+      else
+      {
+        retList.push(ret);
+        getAllSongsByPlaylist(idList.slice(1), retList, callback);
+      }
+    });
+  }
+}
 
 function createSongs (songIdList, songTitleList, songArtistList, playlistId, callback) {
-  console.log(songIdList.length + " songs left to add...");
   if (songIdList.length < 1)
     callback();
   else
@@ -830,7 +886,6 @@ function createSongs (songIdList, songTitleList, songArtistList, playlistId, cal
       data.addItemToList(songIdList[0], playlistId, "Song", "Playlist", function() {
 
         //now we're done, time for the rest
-        console.log(songTitleList[0] + " added to database & playlist");
         createSongs(songIdList.slice(1), songTitleList.slice(1), songArtistList.slice(1), playlistId, callback);
       });
 
@@ -853,13 +908,6 @@ function listCallBack (res, ret) {
       res.render('home');
     }
 }
-
-
-/*
- *
- *        END DATABASE STUFF
- *
- */
 
 
 

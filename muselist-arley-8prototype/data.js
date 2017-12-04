@@ -34,6 +34,46 @@ var playlistValidate = ajv.compile(ps);
 
 /* * * * * * * * * * * MAIN FUNCTIONS * * * * * * * * * * * */
 
+function getAllItems(type, callback) {
+  /* returns an array containing the names and id's of all objects based on the type
+   *
+   */
+
+   var idRet = [];
+   var nameRet = [];
+   if (log) console.log("DATA.GET_ALL_ITEMS: getting all items of type = " + type);
+   //connect to db
+   connect(function(db) {
+    if (db === null) callback(null);
+    else
+    {
+      var cl = db.collection(process.env.DATABASE_COLLECTION);
+      cl.find({Type: "Playlist"}, {_id: false, playlist: false, Type: false}).toArray( function(err, doc) {
+        if (err)
+        {
+          console.log(err)
+          callback(null);
+        } 
+        else
+        {
+          for (i = 0; i < doc.length ; i++)
+          {
+            var array = JSON.stringify(doc[i]).split(",");
+            var id = array[0].split(":")[1];
+            id = id.slice(1, id.length-1);
+            var title = array[1].split(":")[1];
+            title = title.slice(1, title.length-2);
+            idRet.push(id);
+            nameRet.push(title);
+          }
+          var ret = [idRet, nameRet];
+          callback(ret);
+        }
+      });
+    }
+   });
+}
+
 function list(callback) {
   /* returns all items in the database, sorted into an array based on 'Type'
    * callback upon completion, or failure at any step
@@ -90,7 +130,6 @@ function addItemToList(itemId, listId, itemType, listType, callback)
             else
             {
               if (log) console.log("DATA.ADD_TO_LIST : list found, now updating");
-              console.log();
               //get playlist of songs & append new song]
               var newP;
               if (listType === "Playlist")
@@ -151,24 +190,36 @@ function insertItem (type, id, f1, f2, f3, f4, callback) {
   str["Type"] = type;
   if (type === "Song")
   {
-    str["songId"] = id;
-    str["title"] = f1;
-    str["artist"] = f2;
-    str["album"] = f3;
-    str["year"] = f4;
+    if (id !== null || id !== "")
+      str["songId"] = id;
+    if (f1 !== null || f1 !== "")
+      str["title"] = f1;
+    if (f2 !== null || f2 !== "")
+      str["artist"] = f2;
+    if (f3 !== null || f3 !== "")
+      str["album"] = f3;
+    if (f4 !== null || f4 !== "")
+      str["year"] = f4;
   }
   else if (type === "User")
   {
-    str["userId"] = id;
-    str["name"] = f1;
-    str["anthem"] = f2;
-    str["playlists"] = f3;
+    if (id !== null || id !== "")
+      str["userId"] = id;
+    if (f1 !== null || f1 !== "")
+      str["name"] = f1;
+    if (f2 !== null || f2 !== "")
+      str["anthem"] = f2;
+    if (f3 !== null || f3 !== "")
+      str["playlists"] = f3;
   }
   else
-  {
-    str["playlistId"] = id;
-    str["title"] = f1;
-    str["playlist"] = f2;
+  {   
+    if (id !== null || id !== "")
+      str["playlistId"] = id;
+    if (f1 !== null || f1 !== "")
+      str["title"] = f1;
+    if (f2 !== null || f2 !== "")
+      str["playlist"] = f2;
   }
 
   var add = JSON.parse(JSON.stringify(str));
@@ -315,6 +366,47 @@ function clear(callback) {
    });
 }
 
+function getSongsByPlaylist(id, callback)
+{
+  connect(function(db) {
+  if (db === null) callback(null);
+  else
+  {
+    var cl = db.collection(process.env.DATABASE_COLLECTION);
+    findItem("Playlist", id, cl, function(songId) {
+      if (songId === null) callback(null);
+      else
+      {
+        //parse through songId's
+        var res = JSON.stringify(songId).split(",");
+        var idArray = [];
+        for (i = 4; i < res.length; i++)
+        {
+          var r = res[i];
+          if (i === 4)
+            r = r.slice(13, r.length-1);
+          else if (i === res.length-1)
+            r = r.slice(1, r.length-4);
+          else
+            r = r.slice(1, r.length-1);
+          idArray.push(r);
+        }
+          //parse through song Names
+        var titleArray = [];
+        findSongName(idArray, titleArray, cl, function(titleArray)
+        { 
+          if (titleArray === null) callback(null);
+          else
+          {
+            callback(titleArray);
+          } 
+        });
+
+        }
+    });
+  }
+  });
+}
 /* * * * * * * * * * * EXPORT FUNCTIONS * * * * * * * * * * * */
 
 module.exports.post = post;
@@ -326,6 +418,8 @@ module.exports.insertPlaylist = insertPlaylist;
 module.exports.clear = clear;
 module.exports.connect = connect;
 module.exports.addItemToList = addItemToList;
+module.exports.getAllItems = getAllItems;
+module.exports.getSongsByPlaylist = getSongsByPlaylist;
 
 /* * * * * * * * * * * HELPER FUNCTIONS * * * * * * * * * * * */
 function pushList (newP, itemId, listId, type, callback)
@@ -515,6 +609,30 @@ function update(cl, add, callback)
     });
   }
 
+}
+
+function findSongName(idArray, retArray, cl, callback)
+{
+  //returns an array with song names for all the given ids
+  if (idArray.length < 1)
+    callback(retArray);
+  else
+  {
+    var id = idArray[0];
+    cl.find({Type: "Song", songId: id}, {_id: false, songId: false, artist: false, album: false, Type: false, year: false}).toArray( function(err, res){
+      if (err)
+      {
+        console.log(err);
+        callback(null);
+      }
+      else
+      {
+        var newName = JSON.stringify(res).slice(11, JSON.stringify(res).length-3);
+        retArray.push(newName);
+        findSongName(idArray.slice(1), retArray, cl, callback);
+      }
+    });
+  }
 }
 
 function findItem(type, id, cl, callback)
