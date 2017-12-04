@@ -1,22 +1,25 @@
 {
-  "type":"object",
-  "required": ["Type", "userId", "name"],
-  "properties": {
-    "Type": {
-      "type":"string", "enum": ["User"]
-          },
-  "userId": {
-    "type":"string"
-          },
-   "name": {
-      "type":"string"
-          },
-  "playlists": {
-      "type": "array", "items": {"type": "string"}
-  },
-  "anthem": {
-            "type": "string"
-          }
+      "type": "object",
+      "required": ["Type","songId", "title"],
+      "properties": {
+        "Type": {
+          "type":"string", "enum": ["Song"]
         },
-          "additionalProperties" : false
-}
+        "songId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "artist": {
+          "type": "string"
+        },
+        "album": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties" : false
+    }
