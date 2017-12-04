@@ -849,10 +849,10 @@ app.get('/savedata', function(req, res) {
     }
 
     //insert songs into the database & playlist
-    createSongs(songIdList, songTitleList, songArtistList, playlistId, function() {
-      res.render('home');
-    });
-
+   // createSongs(songIdList, songTitleList, songArtistList, playlistId, function() {
+    //  res.render('home');
+   // });
+  res.render('home);
   });
 
 });
