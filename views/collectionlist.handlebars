@@ -8,11 +8,10 @@
 <h4> Select collection to view in DB: </h4>
     <select id="toggle-divs">
         <option selected="selected" value="1">View All</option>
-        <option value="2">Event</option>
-        <option value="3">User</option>
-        <option value="4">Song</option>
-        <option value="5">Party</option>
-        <option value="6">Test</option>
+        <option value="2">User</option>
+        <option value="3">Song</option>
+        <option value="4">Playlist</option>
+        <option value="5">Test</option>
     </select>
 
 </div>
@@ -22,18 +21,15 @@
     <ul><li>{{TotalString}}</li></ul>
     </div>
     <div class="div1" style="display:none;">
-        <ul><li>{{EventString}}</li></ul>
-    </div>
-    <div class="div2" style="display:none;">
        <ul><li>{{UserString}} </ul></li>
     </div>
-    <div class="div3" style="display:none;">
+    <div class="div2" style="display:none;">
        <ul><li> {{SongString}}</ul></li>
     </div>
-    <div class="div4" style="display:none;">
-     <ul><li> {{PartyString}} </ul></li>
+    <div class="div3" style="display:none;">
+     <ul><li> {{PlaylistString}} </ul></li>
     </div>
-    <div class="div5" style="display:none;">
+    <div class="div4" style="display:none;">
      <ul><li> {{TestString}} </ul></li>
     </div>
 </div>
@@ -43,7 +39,7 @@
 </div>
 
 <form class="formDB" role="form"
-  action="/clear" method="GET">
+  action="/cleardata" method="GET">
 
   <div class="form-group">
     <div class="col-sm-4">
