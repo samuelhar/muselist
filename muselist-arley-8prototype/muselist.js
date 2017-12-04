@@ -60,7 +60,7 @@ app.get('/', function(req, res){
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-app.get('/login', function(req, res) {
+app.get('/logins', function(req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 
@@ -161,7 +161,7 @@ var Twitter = require('twitter');
 passport.use(new Strategy({
     consumerKey: 'c44STCwZgHnPbNQgSxHqoU9nQ',
     consumerSecret: 'ecz9PcYvS3R76hfVgzdVo66pdDaSOqBEPyeeQ9mHllMxgvR9H0',
-    callbackURL: 'http://localhost:3000/login/twitter/return'
+    callbackURL: 'http://localhost:8888/login/twitter/return'
   },
   function(token, tokenSecret, profile, cb) {
 
@@ -185,7 +185,13 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/login',
+
+app.get('/returns',
+  function(req, res) {
+    res.render('home', {songs_played: array_song});
+  });
+
+app.get('/login_twitter',
   function(req, res){
     res.render('login');
   });
@@ -197,15 +203,9 @@ app.get('/login/twitter',
 app.get('/login/twitter/return', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/returns');
   });
-// app.get('/profile',
-//   require('connect-ensure-login').ensureLoggedIn(),
-//   function(req, res){
-//     res.render('profile', { user: req.user });
-//   });
 
-/*end of twitter stuff*/
 
 
 
