@@ -1,0 +1,43 @@
+<div class="page-header">
+	<h3>Remove Songs</h3>
+</div>
+
+<div class="display">
+
+
+
+<h4> This is your playlist: </h4>
+  <ol>
+  {{#each songs_played }}
+    <li>{{this}} </li>
+    
+  {{/each}}
+  </ol>
+
+
+<form class="formuser" role="form"
+  action="/delete?form=delete" method="POST">
+
+  <div class="form-group">
+    <label for="song_number" class="col-sm-2 control-label">
+    Song Number you wish to delete</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="song_number" value ="0"
+      name="song_number">
+    </div>
+  </div> <!-- End of form-group -->
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="delete_song" class="btn btn-default">Delete Song</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+
+
+  <div class = "redirectBtn">
+<a href="/" class="btn btn-primary" role="button">Back</a>
+
+</div>

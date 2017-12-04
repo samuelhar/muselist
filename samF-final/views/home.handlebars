@@ -1,0 +1,102 @@
+<div class ="page-header">
+  <h3>Current Playlist</h3>
+</div>
+<p>Welcome! Please <a href="/login">log in</a>.</p>
+
+<h4> Your Current Playlist: </h4>
+
+
+  <ol>
+  {{#each songs_played }}
+    <li>{{this}} </li>
+    
+  {{/each}}
+  </ol>
+<div class="searchbar">
+
+
+<form class="formuser" role="form"
+  action="/user?form=user" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="add_genre" class="btn btn-default">Add Genres</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+
+<form class="formSearchbar" role="form"
+  action="/search_for_artist?form=search_for_artist" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="add_artist" class="btn btn-default">Add Songs by an Artist</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+
+<form class="formSearchbar" role="form"
+  action="/search_for_song?form=search_for_song" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="add_song" class="btn btn-default">Add a Specific Song</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+
+
+</form>
+
+<form class="formSearchbar" role="form"
+  action="/remove_songs?form=remove_songs" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="remove_songs" class="btn btn-default">Remove songs</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+<form class="formSearchbar" role="form"
+  action="/finalize?form=finalize" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="create_playlist" class="btn btn-default">Finalize Playlist</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+<form class="formSearchbar" role="form"
+   action="/selectdata" method="GET">
+ 
+   <div class="form-group">
+     <div class="col-sm-4">
+       <button type="view_data" class="btn btn-default">View Playlists</button>
+     </div>
+   </div>
+ </form>
+
+
+</div> <!-- End of searchbar -->
+
+
+
+</script>

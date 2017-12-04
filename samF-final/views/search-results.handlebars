@@ -1,0 +1,49 @@
+
+
+<div class="page-header">
+	<h3>Search Results</h3>
+</div>
+
+<div class="search-results">
+
+	
+	<h4> Here are some songs by {{artist}}: </h4>
+	<ul>
+	{{#each tracks}}
+		<li> {{this.name}} </li>
+
+		
+	{{/each}}
+	</ul>	
+
+
+
+
+</div>
+<iframe src="https://open.spotify.com/embed?uri=spotify:track:5JunxkcjfCYcY7xJ29tLai"
+        frameborder="0" allowtransparency="true"></iframe>
+
+<div class = "redirectBtn">
+<a href="/" class="btn btn-primary" role="button">Search Again</a>
+</div>
+
+ <form class="formuser" role="form"
+  action="/user?form=user" method="POST">
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="Continue" class="btn btn-default">Continue</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+
+  </form>
+
+
+
+ </form>
+
+   <div class = "redirectBtn">
+<a href="/" class="btn btn-primary" role="button">Back</a>
+
+</div>
