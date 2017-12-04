@@ -22,8 +22,8 @@ var redirect_uri = 'http://localhost:8888/callback';
 var access_token;
 
 var spotifyApi = new SpotifyWebApi({
-  clientId :'8eaab52b4bf443579bb270b1c462b9b6',
-  clientSecret :'bd3baf310e75402dad27d25b4ad80f43',
+  clientId : client_id,
+  clientSecret : client_secret,
   
 });
 
@@ -747,6 +747,11 @@ app.post('/createPlaylist', function(req, res) {
   })
 })
 
+/*
+ *        DATABASE STUFF
+ *
+ */
+ 
 var data = require('./data');
 
 app.get('/cleardata', function(req, res) {
@@ -910,6 +915,11 @@ function listCallBack (res, ret) {
 }
 
 
+/*
+ *
+ *        END DATABASE STUFF
+ *
+ */
 
 app.use(function(req, res){
   res.type('text/html');
