@@ -2,7 +2,7 @@
 Added ability to choose genre songs, add songs by artist, and play songs individually. 
 
 
-Data.js -> used for all things data related. Current features:
+data.js & data_route.js -> used for all things data related. Some useful functions:
 
   #### validate - used to validate a JSON query. probably not needed outside of data.js
   
