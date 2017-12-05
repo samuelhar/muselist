@@ -1,0 +1,41 @@
+<div class = "page-header">
+<h3>View All Playlists</h3>
+</div>
+
+<h4> Playlists: </h4>
+
+  <ol>
+  {{#each songsList }}
+    <li> {{this}} </li>
+    
+  {{/each}}
+
+  <p>
+  
+<!--
+<form action="/data/switch?form=playlistId" method="GET">
+
+  <p>
+
+  <div class="form-group">
+    Enter playlist number to use: <input type="text" class="btn btn-default" id="playlistId" name = "playlistId">
+  </div>
+
+<div class="form-group">
+  <div class="col-sm-4">
+    <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+</div>
+</form>
+-->
+
+  <form class="formSearchbar" role="form"
+  action="/return_home?form=return_home" method="POST">
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="return_home" class="btn btn-default">Go back</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>

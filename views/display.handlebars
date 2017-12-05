@@ -6,15 +6,16 @@
 
 
 
-<h4> Here are some songs: </h4>
+<h4> Here is your playlist: </h4>
 
+<iframe src= {{playlist}} width="300" height="380" frameborder="0" allowtransparency="true"> </iframe>
 
-	<ul>
+<!-- 	<ul>
 	{{#each songs_played }}
 		<iframe src= {{this}} frameborder="0" allowtransparency="true"> </iframe>
 		<br>
 	{{/each}}
-	</ul>
+	</ul> -->
 
 
 
@@ -46,15 +47,27 @@ function modify_qty(val) {
 </script>
   </div> -->
 
-
 <form class="formSearchbar" role="form"
-  action="/clear?form=clear" method="POST">
+  action="/return_home?form=return_home" method="POST">
 
 
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="finish" class="btn btn-default">Home Page</button>
+      <button type="finish" class="btn btn-default">Add more Songs</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
+<form class="formSearchbar" role="form"
+  action="/createPlaylist?form=createPlaylist" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="finish" class="btn btn-default">Create New Playlist</button>
     </div>
   </div> <!-- End of form-group -->
 
@@ -62,7 +75,7 @@ function modify_qty(val) {
 
 
 <form class="formSearchbar" role="form"
-  action="/savedata" method="GET">
+   action="/data/save?form=playlist" method="GET">
 
 
 
@@ -74,7 +87,26 @@ function modify_qty(val) {
 
 </form>
 
+
+<a href= {{my_tweet}} class="twitter-share-button">Tweet</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <!--   <div class = "redirectBtn">
 <a href="/" class="btn btn-primary" role="button">Search Again</a>
 </div> -->
 
+
+</form>
+
+  <form class="formSearchbar" role="form"
+  action="/return_home?form=return_home" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="return_home" class="btn btn-default">Go back</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+
+</form>

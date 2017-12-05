@@ -34,12 +34,23 @@
     </div>
 </div>
 
-<div class = "redirectBtn">
-<a href="/" class="btn btn-primary" role="button">Search Again</a>
-</div>
+
+<form class="formSearchbar" role="form"
+  action="/return_home?form=return_home" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <button type="return_home" class="btn btn-default">Go back</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+</form>
+
 
 <form class="formDB" role="form"
-  action="/cleardata" method="GET">
+  action="/data/clear" method="GET">
 
   <div class="form-group">
     <div class="col-sm-4">
