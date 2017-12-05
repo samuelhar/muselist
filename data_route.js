@@ -50,7 +50,7 @@ router.get('/select', function(req, res) {
         }
         else
         {
-          res.render('select_playlist', {songsList: retList[0]});
+          res.render('select_playlist', {songsList: retList});
         }
       });
 

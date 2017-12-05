@@ -2,7 +2,6 @@
 var express = require('express');
 var router = express.Router();
 var spotify = require("./spotify");
-var func = require("./func");
 var querystring = require('querystring');
 
 
@@ -11,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function (req, res) {
-  var state = func.generateRandomString(16);
+  var state = generateRandomString(16);
   res.cookie(spotify.stateKey, state);
 
   // your application requests authorization
@@ -25,6 +24,17 @@ router.get('/login', function (req, res) {
       state: state
     }));
 });
+
+
+var generateRandomString = function(length) {
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+};
 
 
   //create playlist here

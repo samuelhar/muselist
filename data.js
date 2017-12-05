@@ -17,7 +17,7 @@ var ajv = new Ajv();
 var mongodb = require('mongodb');
 
 /* toggles debug information in console */
-var log = false;
+var log = true;
 
 
 /* pull in schemas */
@@ -96,7 +96,11 @@ function getAllItems(type, callback) {
    if (log) console.log("DATA.GET_ALL_ITEMS: getting all items of type = " + type);
    //connect to db
    connect(function(db) {
-    if (db === null) callback(null);
+    if (db === null) 
+    {
+      console.log("error connecting to database.");
+      callback(null);
+    }
     else
     {
       var cl = db.collection(process.env.DATABASE_COLLECTION);
@@ -119,7 +123,7 @@ function getAllItems(type, callback) {
             nameRet.push(title);
           }
           var ret = [idRet, nameRet];
-          callback(nameRet);
+          callback(ret);
         }
       });
     }
@@ -497,8 +501,8 @@ function getSongsByPlaylist(id, callback)
           if (titleArray === null) callback(null);
           else
           {
-            var ret = [idArray, titleArray];
-            callback(ret);
+           // var ret = [idArray, titleArray];
+            callback(titleArray);
           } 
         });
 
