@@ -163,8 +163,8 @@ var Strategy = require('passport-twitter').Strategy;
 var Twitter = require('twitter');
 
 passport.use(new Strategy({
-    consumerKey: 'c44STCwZgHnPbNQgSxHqoU9nQ',
-    consumerSecret: 'ecz9PcYvS3R76hfVgzdVo66pdDaSOqBEPyeeQ9mHllMxgvR9H0',
+    consumerKey: process.env.TWITTER_CONSUMER_KEY,
+    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
     callbackURL: 'http://localhost:8888/login/twitter/return'
   },
   function(token, tokenSecret, profile, cb) {
