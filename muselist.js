@@ -18,6 +18,8 @@ var SpotifyWebApi = require('spotify-web-api-node');
 var data_route = require('./data_route');
 var db = require('./data');
 app.use('/data', data_route);
+var spotify_route = require('./spotify_route');
+app.use('/spotify', spotify_route);
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
 var redirect_uri = 'http://localhost:8888/callback';
