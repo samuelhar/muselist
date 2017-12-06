@@ -1,0 +1,9 @@
+Page Name,Form ID.Field ID,Expected Values,Test ID,Test Value,Pass/Fail,Notes,
+Search,sForm.textInput1,string >3 chars,1,"""Taylor Swift""",Pass,,
+Search,sForm.textInput2,string >3 chars,2,"""Kayne""",Pass,,
+Search,sForm.textInput3,string >3 chars,3,"""""",Fail,Should bring up error message prompting user to re-enter a string,
+Search,sForm.textInput4,string >3 chars,4,"""a""",Fail,Should ask user if they are sure they wanted to search for this,
+Search,sForm.textInput5,string >3 chars,5,"""dc""",Fail,Should ask user if they are sure they wanted to search for this,
+Search,sForm.textInput6,string >3 chars,6,"""Sddljkfasdfasdfa""",Pass,,
+,,,,,,,
+Table,Field,Type,Read/Write,Data Source,Constriants,TestID,Pass/Fail 
