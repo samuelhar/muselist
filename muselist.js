@@ -163,16 +163,15 @@ var Strategy = require('passport-twitter').Strategy;
 var Twitter = require('twitter');
 
 passport.use(new Strategy({
-    consumerKey: 'c44STCwZgHnPbNQgSxHqoU9nQ',
-    consumerSecret: 'ecz9PcYvS3R76hfVgzdVo66pdDaSOqBEPyeeQ9mHllMxgvR9H0',
-    callbackURL: 'http://localhost:8888/login/twitter/return'
+    consumerKey: process.env.TWITTER_CONSUMER_KEY,
+    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+    callbackURL: process.env.TWITTER_CALLBACK_URI
   },
   function(token, tokenSecret, profile, cb) {
-
     return cb(null, profile);
   }));
 
-  passport.serializeUser(function(user, cb) {
+passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
 
