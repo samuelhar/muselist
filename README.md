@@ -95,3 +95,4 @@ data.js & data_route.js -> used for all things data related. Some useful functio
 
   All project process documents are in the "documentation" folder.
   UI and form field testing are combined into the one spreadsheet, separted by "click" vs actual value input.
+  The documented schemas in documentation folder are not those used in production because they cannot be compiled with comments.
