@@ -1,9 +1,118 @@
-Page Name,Form ID.Field ID,Expected Values,Test ID,Test Value,Pass/Fail,Notes,
-Search,sForm.textInput1,string >3 chars,1,"""Taylor Swift""",Pass,,
-Search,sForm.textInput2,string >3 chars,2,"""Kayne""",Pass,,
-Search,sForm.textInput3,string >3 chars,3,"""""",Fail,Should bring up error message prompting user to re-enter a string,
-Search,sForm.textInput4,string >3 chars,4,"""a""",Fail,Should ask user if they are sure they wanted to search for this,
-Search,sForm.textInput5,string >3 chars,5,"""dc""",Fail,Should ask user if they are sure they wanted to search for this,
-Search,sForm.textInput6,string >3 chars,6,"""Sddljkfasdfasdfa""",Pass,,
-,,,,,,,
-Table,Field,Type,Read/Write,Data Source,Constriants,TestID,Pass/Fail 
+Page Name,Form ID.Field ID,Expected Values,Test ID,Test Value,Pass/Fail,Notes
+Login,lForm.button,click,1,click,Pass,Should send user to authentication page
+Spotify Auth,Sform.spotifylogin,click,1,click,Pass,Should send user to a field to type in Spotify password
+Spotify Auth,Sform.spotifysignup,click,1,click,Pass,Should send user to a field to sign up for a spotify account
+Spotify Login,Sform.username,string,1,<my email>,Pass,
+Spotify Login,Sform.username,string,2,sdjfa,Pass,
+Spotify Login,Sform.password,string,1,<my password>,Pass,
+Spotify Login,Sform.password,string,2,13rfds,Pass,
+Spotify Login,Sform.login,click,1,click,Pass,Should log in user if correct data passed
+Spotify Login,Sform.fblogin,click,1,click,Pass,Should send user to facebook to login
+Facebook Login,Fbform.email,string,1,<my email>,Pass,
+Facebook Login,Fbform.email,string,2,afdadf,Pass,
+Facebook Login,Fbform.password,string,1,<my password>,Pass,
+Facebook Login,Fbform.password,string,2,543afd,Pass,
+Facebook Login,Fbform.login,click,1,click,Pass,Should log in user if correct data passed
+Login redirect,Redirect.createplaylist,click,1,click,Pass,Should take user to main page
+Home,Home.addgenre,click,1,click,Pass,Should take user to add genre page
+Home,Home.addsongsbyartist,click,1,click,Pass,Should take user to add add songs by an artist page
+Home,Home.addsong,click,1,click,Pass,Should take user to add specific song page
+Home,Home.removesong,click,1,click,Pass,Should take user to remove songs page
+Home,Home.finalistplaylist,click,1,click,Pass,Should take user to finalize playlist page
+Home,Home.viewplaylists,click,1,click,Pass,Should take user to view playlist page
+Select Genre,genre.rap,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.rap,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.rap,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.rap,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.rap,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.rap,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+Select Genre,genre.rap,integer < 20 and > 0,7,20,Fail,
+Select Genre,genre.rap,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.pop,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.pop,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.pop,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.pop,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.pop,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.pop,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+Select Genre,genre.pop,integer < 20 and > 0,7,20,Fail,
+Select Genre,genre.pop,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.country,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.country,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.country,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.country,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.country,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.country,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+Select Genre,genre.country,integer < 20 and > 0,7,20,Fail,
+Select Genre,genre.country,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.latin,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.latin,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.latin,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.latin,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.latin,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.latin,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+Select Genre,genre.latin,integer < 20 and > 0,7,20,Fail,
+Select Genre,genre.latin,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.rock,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.rock,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.rock,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.rock,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.rock,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.rock,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+Select Genre,genre.rock,integer < 20 and > 0,7,20,Fail,
+Select Genre,genre.rock,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.party,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.party,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.party,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.party,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.party,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.party,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+Select Genre,genre.party,integer < 20 and > 0,7,20,Fail,
+Select Genre,genre.party,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.punk,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.punk,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.punk,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.punk,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.punk,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.punk,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+,genre.punk,integer < 20 and > 0,7,20,Pass,
+Select Genre,genre.punk,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.reggae,integer < 20 and > 0,1,0,Pass,
+Select Genre,genre.reggae,integer < 20 and > 0,2,1,Pass,
+Select Genre,genre.reggae,integer < 20 and > 0,3,2,Pass,
+Select Genre,genre.reggae,integer < 20 and > 0,4,22,Fail,Hangs the app
+Select Genre,genre.reggae,integer < 20 and > 0,5,-1,Pass,Does not add any songs
+Select Genre,genre.reggae,integer < 20 and > 0,6,cdd,Pass,Does not add any songs
+,genre.reggae,integer < 20 and > 0,7,20,Fail,
+Select Genre,genre.reggae,integer < 20 and > 0,8,200,Fail,Hangs the app
+Select Genre,genre.add,click,1,click when all fields empty,Pass,Adds specified songs to playlist
+Select Genre,genre.add,click,2,click fields full,Pass,Redirects to home page
+Select Genre,genre.back,click,1,click,Pass,Redirects to home page
+Search Artist,artistSearch.artist,string: name of artist,1,Taylor Swift,Pass,Adds songs by that artist
+Search Artist,artistSearch.artist,string: name of artist,2,Kayne West,Pass,Adds songs by that artist
+Search Artist,artistSearch.artist,string: name of artist,3,fsdfadfa,Fails,Hangs the app
+Search Artist,artistSearch.num,integer < 50 and > 0,1,0,Pass,Adds no songs to playlist
+Search Artist,artistSearch.num,integer < 50 and > 0,2,1,Pass,
+Search Artist,artistSearch.num,integer < 50 and > 0,3,5,Pass,
+Search Artist,artistSearch.num,integer < 50 and > 0,4,50,Pass,
+Search Artist,artistSearch.num,integer < 50 and > 0,5,51,Fail,
+Search Artist,artistSearch.num,integer < 50 and > 0,6,200,Fail,Hangs the app
+Search Artist,artistSearch.num,integer < 50 and > 0,7,-9,Pass,Adds no songs to playlist
+Search Artist,artistSearch.num,integer < 50 and > 0,8,asdfs,Pass,Adds no songs to playlist
+Search Artist,artistSearch.add,click,1,click when all fields empty,Pass,Adds specified songs to playlist
+Search Artist,artistSearch.add,click,2,click fields full,Pass,Redirects to home page
+Search Artist,artistSearch.back,click,1,click,Pass,Redirects to home page
+Add Song,addSong.name,string: song name,1,I Am The Walrus,Pass,Hangs the app
+Remove Songs,remSong.num,integer,1,0,Pass,Doesn't delete a song
+Remove Songs,remSong.num,integer,2,1,Pass,Deletes song with that number
+Remove Songs,remSong.num,integer,3,15,Pass,Deletes song with that number
+Remove Songs,remSong.num,integer,4,16,Pass,Deletes song with that number
+Remove Songs,remSong.num,integer,5,adsfas,Pass,Doesn't delete a song
+Remove Songs,remSong.delete,click,1,click when all fields empty,Pass,Adds specified songs to playlist
+Remove Songs,remSong.delete,click,2,click fields full,Pass,Stays on the current page without deleting
+Remove Songs,remSong.back,click,1,click,Pass,Redirects to home page
+Finalize Playlist,fin.addmore,click,1,click,Pass,Redirects to home page
+Finalize Playlist,fin.createnew,click,1,click,Pass,Clears playlist and returns to home page
+Finalize Playlist,fin.save,click,1,click,Pass,Saves playlist to user spotify account
+Finalize Playlist,fin.tweet,click,1,click,Pass,tweets the playlist ID and a short message
+Finalize Playlist,fin.back,click,1,click,Pass,returns to home page
+View Playlists,view.back,click,1,click,Pass,returns to home page
