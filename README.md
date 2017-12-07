@@ -92,3 +92,6 @@ data.js & data_route.js -> used for all things data related. Some useful functio
   Also start the database before doing any connections (the terminal command is simply 'mongod')
   
   And finally type in 'npm install' to install all the packages needed (ajv & mongodb)
+
+  All project process documents are in the "documentation" folder.
+  UI and form field testing are combined into the one spreadsheet, separted by "click" vs actual value input.
