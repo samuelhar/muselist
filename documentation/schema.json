@@ -1,0 +1,60 @@
+//the data is stored in a Mongo database.
+// All incoming data are separated into 'Playlists' or 'Songs' (however more types are supported from older versions of the project)
+
+// Note that the data is differentiated through the "Type" field
+{
+      "type": "object",
+      //all songs must have a Type, a unique id, and a title. other optional fields are: artist, album, and year
+      "required": ["Type","songId", "title"],
+      "properties": {
+        //every Song in the db must have Type = Song, because this is how the objects are differentiated
+        "Type": {
+          "type":"string", "enum": ["Song"]
+        },
+        "songId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "artist": {
+          "type": "string"
+        },
+        "album": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      
+      //no other fields are allowed
+      "additionalProperties" : false
+    }
+    
+    
+{
+  "type": "object",
+  //all playlists must have a type, a unique id, and a title, with an option for a list of songs
+  "required": ["Type", "playlistId", "title"],
+  "properties": {
+  
+  //similarly to songs, all playlists must have a Type set to "Playlist"
+    "Type": {
+      "type": "string", "enum": ["Playlist"]
+    },
+    "playlistId": {
+      "type":"string"
+    },
+    "title": {
+      "type": "string"
+    },
+    
+    //the playlist field contains songId's, which are matched to songs already in the database
+    "playlist" : {
+      "type": "array", "items": {"type": "string"}
+    }
+  },
+   //no other fields are allowed
+        "additionalProperties": false
+}
