@@ -1,98 +1,34 @@
 # muselist
 Added ability to choose genre songs, add songs by artist, and play songs individually. 
 
+To run, install node & npm, and enter the following command in the directory containing the application:
+     npm install
 
-data.js & data_route.js -> used for all things data related. Some useful functions:
+Enter to run the app:
 
-  #### validate - used to validate a JSON query. probably not needed outside of data.js
-  
-  
-  #### list(callback) - gathers & organizes data and renders an html page that shows the contents
-  
-    callback: a function list passes in the data array upon completion
-    
-    
-  #### clear - deletes all items in the database
-  
-    callback: a function called upon completion
-    
-    
-  #### post - validates & inserts a query to the database (use this for testing - actual posts should be done with insert)
-  
-    type: type of object ("User", "Song", "Playlist", or "Test")
-    
-    query: JSON to be added
-    
-    callback: a function called upon completion
-    
-    
- #### connect - connects to the mongo server (probably not needed outside data.js)
-  
-    callback: a function called upon completion
-    
-    
-  #### insertUser - updates or inserts a user to the database
-  
-    userId: unique identifier for item
-    
-    name: name
-    
-    anthem: favorite song
-    
-    playlists: list of lists of songs
-    
-    callback: a function called upon completion
-    
-    
-  #### insertSong - updates or inserts a song to the database
-  
-    songId: unique identifier for song
-    
-    title: title of track
-    
-    artist: artist of track
-    
-    album: album track is on
-    
-    year: year track was released
-    
-    callback: a function called upon completion
-    
-    
-  #### insertPlaylist - updates or inserts a playlist to the database
-    playlistId: unique identifier for playlist
-    
-    title: name of playlist
-    
-    playlist: list of songs
-    
-    callback: a function called upon completion
-  
-  
-  #### addItemToList - updates the songslist in a playlist, or the playlist-list in a user
-    itemId: unique identifier for the item (songId, or playlistId)
 
-    listId: unique identifier for the list (playlistId, or userId)
+     node muselist.js
 
-    itemType: type of the item (Song, or Playlist)
+Ensure that a file named '.env' is in the directory with the following contents:
 
-    listType: type of the list (Playlist, or User)
 
-    callback: a function called upon completion
-  
-  
-  
-  Make sure to include the following fields to the .env file:
+      CLIENT_ID = '<replace with client id for spotify>'
+      CLIENT_SECRET = '<replace with client secret for spotify>'
+      TWITTER_CONSUMER_KEY = '<replace with twitter consumer key>'
+      TWITTER_CONSUMER_SECRET = '<replace with twitter consumer secret>'
+      TWITTER_ACCESS_TOKEN = '<replace with twitter access token>'
+      TWITTER_ACCESS_SECRET = '<replace with twitter access secret>'
+      DATABASE_URL = '<replace with URL following this format:
+                     mongodb://'<ip>':'<portNo>'/'<collection>'
+                     EX: mongodb://localhost:27017/test
+                     >'
+      PORT = '<replace with portno to use for URL>'
+                    
+                    
 
-    DATABASE_URL = mongodb://localhost:27017/test (note: subject to change)
+data.js contains functions used for inserting, updating, and extracting data from the database.
+data_route.js is used for routing all URL's involving viewing or saving data from within the app. Note that a machine must be running a mongodb (terminal command: 'mongod').
 
-    DATABASE_COLLECTION = test (note: subject to change)
-
-  
-  Also start the database before doing any connections (the terminal command is simply 'mongod')
-  
-  And finally type in 'npm install' to install all the packages needed (ajv & mongodb)
-
-  All project process documents are in the "documentation" folder.
-  UI and form field testing are combined into the one spreadsheet, separted by "click" vs actual value input.
-  The documented schemas in documentation folder are not those used in production because they cannot be compiled with comments.
+All project process documents are in the "documentation" folder.
+UI and form field testing are combined into the one spreadsheet, separted by "click" vs actual value input.
+The documented schemas in documentation folder are not those used in production because they cannot be compiled with comments.
