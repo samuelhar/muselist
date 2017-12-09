@@ -8,7 +8,7 @@
 
     <title>MuseList Home</title>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
     <link rel="stylesheet" href="/style.css">
     <style type="text/css">
       #login, #loggedin {
@@ -44,19 +44,19 @@
         <div id="oauth">
         </div>
         <form method="POST" action="/createPlaylist">
-        <button type="submit">Create A Playlist</button>
+        <button class="btn btn-primary"; type="submit">Create A Playlist</button>
         </form>
       </div>
     </div>
 
     <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Welcome Back {{display_name}}</h1>
-      <div class="media">
+      <h1 style="margin-top: -140px;color:#000000">Welcome Back {{display_name}}</h1>
+      <div class="media" style="margin-top: -70px;">
         <div class="pull-left">
           <img class="media-object" width="150" src="{{images.0.url}}" />
         </div>
         <div class="media-body">
-          <dl class="dl-horizontal">
+          <dl class="dl-horizontal" style="color: #000000">
             <dt>User Name:</dt><dd>{{id}}</dd>
             
           </dl>

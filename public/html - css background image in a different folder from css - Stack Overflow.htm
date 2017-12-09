@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css -->
+<html itemscope="" itemtype="http://schema.org/QAPage" class="gr__stackoverflow_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>html - css background image in a different folder from css - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="https://stackoverflow.com/opensearch.xml">
+        <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="stackoverflow.com">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="css background image in a different folder from css">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="my css is in assets/css/style.css and my image is in assets/img/bg.png But when i try to link the background image:
+
+background: url(../img/bg.png);
+it instead uses assets/css/../img/bg.png as the...">
+    <meta property="og:url" content="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css">
+    <link rel="canonical" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css">
+
+    
+    
+    <script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_rendering_170.js"></script><script src="https://securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1&amp;correlator=4239160227863376&amp;output=json_html&amp;callback=googletag.impl.pubads.callbackProxy1&amp;impl=fifs&amp;json_a=1&amp;eid=108809103%2C21060133%2C21060362%2C21060494%2C21061149%2C21061378&amp;sc=1&amp;sfv=1-0-14&amp;iu_parts=248424177%2Cstackoverflow.com%2Clb%2Cquestion-pages%2Cmlb%2Csb&amp;enc_prev_ius=%2F0%2F1%2F2%2F3%2C%2F0%2F1%2F4%2F3%2C%2F0%2F1%2F5%2F3&amp;prev_iu_szs=728x90%2C728x90%2C300x250%7C300x600&amp;cust_params=Registered%3Dfalse%26so-tag%3Dhtml%252Ccss%26X-Site%3Dsoftwareengineering.stackexchange.com&amp;cookie=ID%3D75b2ff3811c34a56%3AT%3D1506870908%3AS%3DALNI_MYK9OBW2-KP-drFliodWVsgWIPbGg&amp;abxe=1&amp;lmt=1512798525&amp;dt=1512798525192&amp;frm=20&amp;biw=726&amp;bih=656&amp;oid=2&amp;adxs=0%2C0%2C0&amp;adys=0%2C0%2C0&amp;adks=58773763%2C1779052596%2C228937067&amp;gut=v2&amp;ifi=1&amp;u_tz=-300&amp;u_his=6&amp;u_h=900&amp;u_w=1440&amp;u_ah=797&amp;u_aw=1440&amp;u_cd=24&amp;u_nplug=4&amp;u_nmime=6&amp;u_sd=1&amp;flash=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F8783026%2Fcss-background-image-in-a-different-folder-from-css&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;vrg=170&amp;vis=1&amp;ga_vid=458050637.1470758062&amp;ga_sid=1512798525&amp;ga_hid=1726024479"></script><script src="./html - css background image in a different folder from css - Stack Overflow_files/rules-p-c1rF4kxgLUzNc.js"></script><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/quant.js"></script><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/beacon.js"></script><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/analytics.js"></script><script src="./html - css background image in a different folder from css - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./html - css background image in a different folder from css - Stack Overflow_files/stub.en.js"></script>
+        <link rel="stylesheet" type="text/css" href="./html - css background image in a different folder from css - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;css background image in a different folder from css&#39;" href="https://stackoverflow.com/feeds/question/8783026">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:8,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:8783026});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '8783026');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","serverTime":1512798523,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"ae18fe401759f3ad07c2f5571acd75ec","tid":"f97963bb-087c-8990-6b06-042a99a1ef7c","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"topBar":{"showNewFeatureNotice":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"efe838bc81a3","js/moderator.en.js":"b85ebba71ba7","js/full-anon.en.js":"ed668682620b","js/full.en.js":"924e8f42b6f5","js/wmd.en.js":"252ab9a6e089","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"8e20e188854d","js/help.en.js":"a56fdf9b9ff2","js/tageditor.en.js":"c98d7c7e4b66","js/tageditornew.en.js":"6a2aafa1f046","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"47de10a8358f","js/review.en.js":"66938485a3a0","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"c9b542cc34e1","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"f1c5f098d846","js/keyboard-shortcuts.en.js":"9717a2b2a7a6","js/external-editor.en.js":"ae2d26085224","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"ae2d26085224","js/snippet-javascript.en.js":"baa5f1a87f26","js/snippet-javascript-codemirror.en.js":"2c66d949cb3a"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css">&lt;style&gt;body,.top-bar{margin-top:1.9em}&lt;/style&gt;</noscript>
+<script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/full-anon.en.js"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=stackoverflow.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=stackoverflow.com"></script><script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_170.js" async=""></script><link rel="stylesheet" href="./html - css background image in a different folder from css - Stack Overflow_files/clc.min.css" type="text/css"><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-14/html/container.html"><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/external-editor.en.js"></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><link id="avast_os_ext_custom_font" href="./html - css background image in a different folder from css - Stack Overflow_files/css" rel="stylesheet" type="text/css"><link href="./html - css background image in a different folder from css - Stack Overflow_files/css(1)" rel="stylesheet" type="text/css"><link href="./html - css background image in a different folder from css - Stack Overflow_files/css(2)" rel="stylesheet" type="text/css"><link href="./html - css background image in a different folder from css - Stack Overflow_files/css(3)" rel="stylesheet" type="text/css"><style id="wrc-css" type="text/css">.wrcx {display:none} .r .wrcx,  .fc .wrcx, #rhsline ol .wrcx {display:inline-block !important; position:relative !important; background: url("chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/serp-none.png") right no-repeat},.wrcx {display:none} .osl .wrcx, .vresult .r, .tl .r .wrcx{ display: none;}
+.wrc0 {display:none} .r .wrc0,  .fc .wrc0, #rhsline ol .wrc0 {display:inline-block !important; position:relative !important; background: url("chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/serp-none.png") right no-repeat},.wrc0 {display:none} .osl .wrc0, .vresult .r, .tl .r .wrc0{ display: none;}
+.wrc1 {display:none} .r .wrc1,  .fc .wrc1, #rhsline ol .wrc1 {display:inline-block !important; position:relative !important; background: url("chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/serp-ok.png") right no-repeat},.wrc1 {display:none} .osl .wrc1, .vresult .r, .tl .r .wrc1{ display: none;}
+.wrc2 {display:none} .r .wrc2,  .fc .wrc2, #rhsline ol .wrc2 {display:inline-block !important; position:relative !important; background: url("chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/serp-attention.png") right no-repeat},.wrc2 {display:none} .osl .wrc2, .vresult .r, .tl .r .wrc2{ display: none;}
+.wrc3 {display:none} .r .wrc3,  .fc .wrc3, #rhsline ol .wrc3 {display:inline-block !important; position:relative !important; background: url("chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/serp-error.png") right no-repeat},.wrc3 {display:none} .osl .wrc3, .vresult .r, .tl .r .wrc3{ display: none;}
+#wrcHoverDiv .aos-tooltip-logo-img { background-image: url(chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/logo-white.png); }
+#wrcHoverDiv .aos-tooltip-attention .aos-tooltip-logo-img { background-image: url(chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/logo-dark.png); }</style></head>
+<body class="question-page new-topbar" data-gr-c-s-loaded="true" style=""><div id="wrcHoverDiv"><div id="wrccontainer" class="aos-tooltip"><div class="aos-tooltip-arrow"></div><a class="aos-tooltip-logo"><span class="aos-tooltip-logo-img"></span><span class="aos-tooltip-logo-text">Online Security</span></a><div id="wrcratingicon" class="aos-tooltip-icon" style="background-image: url(&quot;chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/ui/icons/unknown.png&quot;);"></div><div id="wrcratingtext" class="aos-tooltip-text">This site has no rating</div></div></div>
+            <script async="" src="https://js-sec.indexww.com/ht/p/185901-159836282584097.js"></script>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed _scrolling">
+    <div class="-container">
+        <div class="-main">
+            
+                <a href="https://stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                   <span class="-img">Stack Overflow</span>
+                </a>
+
+
+                <nav class="navigation" role="navigation" aria-label="site navigation">
+                    <ol class="-list">
+    <li class="-item _current">
+        <a id="nav-questions" href="https://stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+    <li class="-item">
+        <a id="nav-jobs" href="https://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+    </li>
+    <li class="-item">
+        <a id="nav-tags" href="https://stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+    <li class="-item">
+        <a id="nav-users" href="https://stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+                    </ol>
+                </nav>
+
+        </div>
+        
+            <form id="search" action="https://stackoverflow.com/search" method="get" class="searchbar" autocomplete="off" role="search">
+                <input name="q" type="text" placeholder="Search…" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+            </form>
+
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="https://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })" wrc_done="true">chat</a><span class="wrc1 wrc_icon wrc_injected"></span>
+            </div>
+    <a href="https://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-stackoverflow site-icon" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })" wrc_done="true">
+        <div class="favicon favicon-stackoverflowmeta site-icon" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f8783026%2fcss-background-image-in-a-different-folder-from-css" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites" wrc_done="true">more stack exchange communities</a><span class="wrc1 wrc_icon wrc_injected"></span>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr" wrc_done="true">company blog</a><span class="wrc0 wrc_icon wrc_injected"></span>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })" wrc_done="true">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a><span class="wrc1 wrc_icon wrc_injected"></span>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })" wrc_done="true">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a><span class="wrc0 wrc_icon wrc_injected"></span>
+                        </li>
+            </ul>
+        </div>
+    </div>
+        </div>
+        <ol class="-list">
+    <li class="-item">
+        <a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item"><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+                <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites" wrc_done="true">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a><span class="wrc1 wrc_icon wrc_injected"></span>
+    </li>
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f8783026%2fcss-background-image-in-a-different-folder-from-css" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn-topbar-primary" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+        StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+
+
+    <div class="container _full ">
+        
+
+
+
+
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+
+
+
+<div class="s-hero hero-container _fixed js-dismissable-hero" data-campaign-name="stk">
+    <div class="-container g-row jc-sp-between ai-center">
+        <div class="g-col6">
+            <p class="-title"><strong>Join Stack Overflow</strong> to learn, share knowledge, and build your career.</p>
+        </div>
+
+        <div class="s-signup _hero g-col6">
+            <div id="openid-buttons" class="-social">
+                <a class="btn-outlined -white _medium _block" href="https://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f8783026%2fcss-background-image-in-a-different-folder-from-css" rel="nofollow">Email Sign Up</a>
+                <span class="-or">or sign in with</span>
+                    <div class="major-provider btn _block _medium _google" data-provider="google" data-oauthserver="https://accounts.google.com/o/oauth2/auth" data-oauthversion="2.0">
+<svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg>                                                Google
+                    </div>
+                    <div class="major-provider btn _block _medium _facebook" data-provider="facebook" data-oauthserver="https://www.facebook.com/v2.0/dialog/oauth" data-oauthversion="2.0">
+                        <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg>                        Facebook
+                    </div>
+                                    <a id="close" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="js-dismiss js-hero-mini-disabled -dismiss" title="dismiss"><svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg></a>
+            </div>
+
+            <form id="login-form" action="https://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f8783026%2fcss-background-image-in-a-different-folder-from-css" method="POST">
+
+                <input type="hidden" name="fkey" value="ae18fe401759f3ad07c2f5571acd75ec">
+
+                <input type="hidden" name="ssrc" value="">
+
+                <input type="hidden" id="oauth_version" name="oauth_version" value="">
+                <input type="hidden" id="oauth_server" name="oauth_server" value="">
+
+                <div id="se-login-fields">
+                    <input type="hidden" name="legalLinksShown" value="0">
+                </div>
+            </form>
+            <script>
+                StackExchange.ready(function () {
+                    StackExchange.InlineAuth.init();
+                })
+            </script>
+        </div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        StackExchange.Hero.init("stk", "a");
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+
+        $('.js-dismissable-hero #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+              });
+
+            StackExchange.Hero.dismiss();
+
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".js-dismissable-hero").fadeOut("fast", function () {
+                        $(".js-dismissable-hero").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+</script>    <div class="inner-content">
+            <div id="question-header">
+                <h1 itemprop="name"><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css" class="question-hyperlink">css background image in a different folder from css</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+        <a href="https://stackoverflow.com/questions/ask" class="btn-outlined">Ask Question</a>
+
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="8783026" id="question">
+
+    <div id="dfp-tlb" class="everyonelovesstackoverflow" style="display: none;"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="8783026">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#">favorite</a>
+        <div class="favoritecount"><b>2</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>my css is in <code>assets/css/style.css</code> and my image is in <code>assets/img/bg.png</code> But when i try to link the background image:</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">background</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(../</span><span class="pln">img</span><span class="pun">/</span><span class="pln">bg</span><span class="pun">.</span><span class="pln">png</span><span class="pun">);</span></code></pre>
+
+<p>it instead uses <code>assets/css/../img/bg.png</code> as the url. Why is it?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://stackoverflow.com/questions/tagged/html" class="post-tag js-gps-track" title="show questions tagged &#39;html&#39;" rel="tag">html</a> <a href="https://stackoverflow.com/questions/tagged/css" class="post-tag js-gps-track" title="show questions tagged &#39;css&#39;" rel="tag">css</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/q/8783026" title="short permalink to this question" class="short-link" id="link-post-8783026">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/8783026/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-01-09 01:29:38Z" class="relativetime">Jan 9 '12 at 1:29</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/1099531/michelle"><div class="gravatar-wrapper-32"><img src="./html - css background image in a different folder from css - Stack Overflow_files/fuh84.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/1099531/michelle">Michelle</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,563</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="64 silver badges"><span class="badge2"></span><span class="badgecount">64</span></span><span title="114 bronze badges"><span class="badge3"></span><span class="badgecount">114</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8783026" class="comments js-comments-container ">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="3" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10953214" class="comment js-comment ">
+        <td class="js-comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">It shouldn't... does quoting it (<code>background: url('../img/bg.png');</code>) solve the problem?</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/707111/ryan" title="149,061 reputation" class="comment-user">Ryan<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment10953214_8783026"><span title="2012-01-09 01:33:06Z" class="relativetime-clean">Jan 9 '12 at 1:33</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-10953234" class="comment js-comment ">
+        <td class="js-comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@minitech it didn't :( Also tried using double quotes</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/1099531/michelle" title="5,563 reputation" class="comment-user owner">Michelle</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment10953234_8783026"><span title="2012-01-09 01:35:04Z" class="relativetime-clean">Jan 9 '12 at 1:35</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-10953259" class="comment js-comment ">
+        <td class="js-comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Which browser?.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/707111/ryan" title="149,061 reputation" class="comment-user">Ryan<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment10953259_8783026"><span title="2012-01-09 01:37:34Z" class="relativetime-clean">Jan 9 '12 at 1:37</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-10953264" class="comment js-comment ">
+        <td class="js-comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Tried on both chrome and opera.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/1099531/michelle" title="5,563 reputation" class="comment-user owner">Michelle</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment10953264_8783026"><span title="2012-01-09 01:37:52Z" class="relativetime-clean">Jan 9 '12 at 1:37</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-10953303" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I might be being a bit too thorough, but are you checking <a href="http://dl.dropbox.com/u/2463964/CSS-Problem.PNG" rel="nofollow noreferrer" wrc_done="true">like this</a><span class="wrc1 wrc_icon wrc_injected"></span>? (As you can see, it works for me...)</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/707111/ryan" title="149,061 reputation" class="comment-user">Ryan<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment10953303_8783026"><span title="2012-01-09 01:42:11Z" class="relativetime-clean">Jan 9 '12 at 1:42</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-8783026" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" onclick="">show <b>3</b> more comments</a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="5">
+                                5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere " href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="8784623"></a>
+<div id="answer-8784623" class="answer accepted-answer" data-answerid="8784623" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="8784623">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">13</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Html file (/index.html)</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="dec">&lt;!DOCTYPE HTML&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+</span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">http-equiv</span><span class="pun">=</span><span class="atv">"Content-Type"</span><span class="pln"> </span><span class="atn">content</span><span class="pun">=</span><span class="atv">"text/html; charset=utf-8"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;title&gt;</span><span class="pln">Untitled Document</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+     </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">media</span><span class="pun">=</span><span class="atv">"screen"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"assets/css/style.css"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+     </span><span class="tag">&lt;h1&gt;</span><span class="pln">Background Image</span><span class="tag">&lt;/h1&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></code></pre>
+
+<p>Css file (/assets/css/style.css)</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">body</span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln">url</span><span class="pun">(../</span><span class="pln">img</span><span class="pun">/</span><span class="pln">bg</span><span class="pun">.</span><span class="pln">jpg</span><span class="pun">);</span><span class="pln">  
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/8784623" title="short permalink to this answer" class="short-link" id="link-post-8784623">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/8784623/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/8784623/revisions" title="show all edits to this post">edited <span title="2012-01-09 06:28:52Z" class="relativetime">Jan 9 '12 at 6:28</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-01-09 06:22:39Z" class="relativetime">Jan 9 '12 at 6:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/803316/adriano-silva"><div class="gravatar-wrapper-32"><img src="./html - css background image in a different folder from css - Stack Overflow_files/P3cWI.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/803316/adriano-silva">Adriano Silva</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,483</span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="22 bronze badges"><span class="badge3"></span><span class="badgecount">22</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8784623" class="comments js-comments-container ">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-44753150" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Can you add some explanation to what you did for this. This is a basic HTML/CSS layout. Why would this make the answer as you haven't officially shown any different code than what is really provided.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/3547515/cayce-k" title="1,990 reputation" class="comment-user">Cayce K</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment44753150_8784623"><span title="2015-01-28 13:10:09Z" class="relativetime-clean">Jan 28 '15 at 13:10</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-8784623" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow" style="display: none;"></div>
+  
+<a name="47537807"></a>
+<div id="answer-47537807" class="answer" data-answerid="47537807" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="47537807">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<h2>you can use this</h2>
+
+<p><code>body{
+    background-image: url('../img/bg.png');
+}</code></p>
+
+<hr>
+
+<p>I tried this on my project where I need to set the background image of a div so I used this and it worked!</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/47537807" title="short permalink to this answer" class="short-link" id="link-post-47537807">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/47537807/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2017-11-28 17:43:21Z" class="relativetime">Nov 28 at 17:43</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/8198332/tanay-toshniwal"><div class="gravatar-wrapper-32"><img src="./html - css background image in a different folder from css - Stack Overflow_files/SmNb3.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/8198332/tanay-toshniwal">Tanay Toshniwal</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-47537807" class="comments js-comments-container ">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-82032731" class="comment js-comment ">
+        <td class="js-comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Please consider pointing out the difference between your solution and OPs attempt. At first glance, these look the same; but I see that you wrapped your relative path in quotation marks.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/2020476/trent" title="729 reputation" class="comment-user">Trent</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment82032731_47537807"><span title="2017-11-28 17:51:34Z" class="relativetime-clean">Nov 28 at 17:51</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-82032950" class="comment js-comment ">
+        <td class="js-comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Why to use quotes in URL is answered here - <a href="https://stackoverflow.com/questions/2168855/is-quoting-the-value-of-url-really-necessary" title="is quoting the value of url really necessary">stackoverflow.com/questions/2168855/…</a></span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/8198332/tanay-toshniwal" title="3 reputation" class="comment-user">Tanay Toshniwal</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment82032950_47537807"><span title="2017-11-28 17:58:00Z" class="relativetime-clean">Nov 28 at 17:58</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+        </td>
+    </tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-47537807" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="28779646"></a>
+<div id="answer-28779646" class="answer" data-answerid="28779646" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="28779646">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Since you are providing a relative pathway to the image, the image location is looked for from the location in which you have the css file. So if you have the image in a different location to the css file you could either try giving the absolute URL(pathway starting from the root folder) or give the relative file location path. In your case since img and css are in the folder assets to move from location of css file to the img file, you can use '..' operator to refer that the browser has to move 1 folder back and then follow the pathway you have after the '..' operator. 
+This is basically how relative pathway works and you can use it to access resoures in different folders. Hope it helps.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/28779646" title="short permalink to this answer" class="short-link" id="link-post-28779646">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/28779646/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-02-28 08:21:05Z" class="relativetime">Feb 28 '15 at 8:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/4605375/bhanushrestha"><div class="gravatar-wrapper-32"><img src="./html - css background image in a different folder from css - Stack Overflow_files/PjFXH.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/4605375/bhanushrestha">bhanushrestha</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">41</span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-28779646" class="comments js-comments-container  dno">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                            <tr><td></td><td></td></tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-28779646" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8783996"></a>
+<div id="answer-8783996" class="answer downvoted-answer" data-answerid="8783996" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="8783996">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You are using cache system.. you can modify the original file and clear cache to show updates</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/8783996" title="short permalink to this answer" class="short-link" id="link-post-8783996">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/8783996/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-01-09 04:38:08Z" class="relativetime">Jan 9 '12 at 4:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/568151/abudayah"><div class="gravatar-wrapper-32"><img src="./html - css background image in a different folder from css - Stack Overflow_files/g6amb.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/568151/abudayah">Abudayah</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,686</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="27 silver badges"><span class="badge2"></span><span class="badgecount">27</span></span><span title="52 bronze badges"><span class="badge3"></span><span class="badgecount">52</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8783996" class="comments js-comments-container  dno">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                            <tr><td></td><td></td></tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-8783996" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8783041"></a>
+<div id="answer-8783041" class="answer downvoted-answer" data-answerid="8783041" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="8783041">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You are using a relative path. You should use the absolute path, url(/assets/css/style.css).</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/8783041" title="short permalink to this answer" class="short-link" id="link-post-8783041">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/8783041/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-01-09 01:31:41Z" class="relativetime">Jan 9 '12 at 1:31</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/71060/brownman98"><div class="gravatar-wrapper-32"><img src="./html - css background image in a different folder from css - Stack Overflow_files/fee404e970075428dead622ffa764bea" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/71060/brownman98">Brownman98</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">983</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="16 bronze badges"><span class="badge3"></span><span class="badgecount">16</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8783041" class="comments js-comments-container ">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10953243" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Relative paths work, and absolute paths aren't always the best. Maybe we could focus on the problem?</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/707111/ryan" title="149,061 reputation" class="comment-user">Ryan<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment10953243_8783041"><span title="2012-01-09 01:35:45Z" class="relativetime-clean">Jan 9 '12 at 1:35</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-10957159" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>url(/assets/css/style.css)</code> is a relative path...</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/522877/wex" title="10,912 reputation" class="comment-user">Wex</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#comment10957159_8783041"><span title="2012-01-09 08:43:54Z" class="relativetime-clean">Jan 9 '12 at 8:43</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-8783041" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="https://stackoverflow.com/questions/8783026/answer/submit" method="post" class="post-form">
+                            <input type="hidden" id="post-id" value="8783026">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com/">
+                            <h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="ae18fe401759f3ad07c2f5571acd75ec">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f8783026%2fcss-background-image-in-a-different-folder-from-css%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg> Sign up using Google
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg> Sign up using Facebook
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><g><path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"></path><path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"></path></g></svg> Sign up using Email and Password
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fstackoverflow.com%2fquestions%2f8783026%2fcss-background-image-in-a-different-folder-from-css%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+                            </div>
+
+                                                            <div class="form-submit cbt">
+                                        <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                                    <a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank" wrc_done="true">privacy policy</a><span class="wrc1 wrc_icon wrc_injected"></span> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank" wrc_done="true">terms of service</a><span class="wrc1 wrc_icon wrc_injected"></span>.</p>
+<input type="hidden" name="legalLinksShown" value="1">                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://stackoverflow.com/questions/tagged/html" class="post-tag" title="show questions tagged &#39;html&#39;" rel="tag">html</a> <a href="https://stackoverflow.com/questions/tagged/css" class="post-tag" title="show questions tagged &#39;css&#39;" rel="tag">css</a>  or <a href="https://stackoverflow.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2012-01-09 01:29:38Z"><b>5 years, 11 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>76,885 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css?lastactivity" class="lastactivity-link" title="2017-11-28 17:43:21Z">10 days ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+                        
+<div id="dfp-tsb" class="everyonelovesstackoverflow tex2jax_ignore clc-cp-container" style="display: block;"><div class="clc-cp-sb--short _jobs has-image"><div class="-wrapper clc-g-column"><div class="clc-g-col clc-g-column -header"><a href="https://stackoverflow.com/jobs/companies/oliver-wyman-labs" data-clc-click="https://clc.stackoverflow.com/click?an=AUMAvP8Kq_Eog8g-1UgHCN1TVQICCPoBsomYBD8D_rwH__YI_NkQCBQAAMCzdiU6b1k7PwID7d0IA8D_CADunMmsNC7QXX6O&amp;cr=273660&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fcompanies%2Foliver-wyman-labs%3Fmed=clc&amp;sig=pg5dbN1ohr4Dow" class="clc-cp-link" target="_blank"></a><div class="-bg-image" style="background-image: url(https://i.stack.imgur.com/0FRVmm.jpg)"></div><div class="clc-g-col clc-g-center fl-none -logo"><img src="./html - css background image in a different folder from css - Stack Overflow_files/L07f0.jpg" alt="Oliver Wyman Labs"></div><div class="clc-g-col clc-g-column -company-info"><h2 class="clc-g-col fl-none -company">Oliver Wyman Labs</h2><span class="clc-g-col fl-none -meta-info">Boston, MA</span></div></div><div class="clc-g-column -content"><ul class="clc-g-col clc-g-column -list"><li class="-item"><a class="-link" target="_blank" href="https://stackoverflow.com/jobs/143085/full-stack-software-engineers-help-us-build-a-oliver-wyman-labs" data-clc-click="https://clc.stackoverflow.com/click?an=AUMAvP8Kq_Eog8g-1UgHCN1TVQICCPoBsomYBD8D_rwH__YI_NkQCBQAAMCzdiU6b1k7PwID7d0IA8D_CADunMmsNC7QXX6O&amp;cr=273660&amp;ct=3&amp;ctid=143085&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F143085%2Ffull-stack-software-engineers-help-us-build-a-oliver-wyman-labs%3Fmed=clc&amp;sig=PcFDYkTezd1hCQ"> <div class="-title"><strong>Full-stack Software Engineers - Help us build a brand new team</strong></div><div class="-job-items"><span class="-info">Boston, MA</span></div><div class="g-row _gutters -tags"><span class="clc-g-col fl-none clc-cp-tag highlight">python</span><span class="clc-g-col fl-none clc-cp-tag">javascript</span></div></a> </li><li class="-item"><a class="-link" target="_blank" href="https://stackoverflow.com/jobs/147392/data-scientists-wanted-oliver-wyman-labs" data-clc-click="https://clc.stackoverflow.com/click?an=AUMAvP8Kq_Eog8g-1UgHCN1TVQICCPoBsomYBD8D_rwH__YI_NkQCBQAAMCzdiU6b1k7PwID7d0IA8D_CADunMmsNC7QXX6O&amp;cr=273660&amp;ct=3&amp;ctid=147392&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F147392%2Fdata-scientists-wanted-oliver-wyman-labs%3Fmed=clc&amp;sig=iLPdRoVFHkGVYg"> <div class="-title"><strong>Data Scientists wanted!</strong></div><div class="-job-items"><span class="-info">Boston, MA</span></div><div class="g-row _gutters -tags"><span class="clc-g-col fl-none clc-cp-tag highlight">python</span><span class="clc-g-col fl-none clc-cp-tag">machine-learning</span></div></a> </li></ul></div><div class="clc-g-col clc-g-row -footer"><a href="https://stackoverflow.com/jobs/companies/oliver-wyman-labs" data-clc-click="https://clc.stackoverflow.com/click?an=AUMAvP8Kq_Eog8g-1UgHCN1TVQICCPoBsomYBD8D_rwH__YI_NkQCBQAAMCzdiU6b1k7PwID7d0IA8D_CADunMmsNC7QXX6O&amp;cr=273660&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fcompanies%2Foliver-wyman-labs%3Fmed=clc&amp;sig=pg5dbN1ohr4Dow" class="clc-g-center clc-btn-secondary -learn-more" target="_blank">View all 2 job openings!</a></div></div></div><img src="./html - css background image in a different folder from css - Stack Overflow_files/impression.gif" class="impression" style="display: none;"></div>
+            <div id="hireme" class="tex2jax_ignore clc-cp-container"><div class="clc-cp-sb--short _benefits has-image"><div class="-wrapper clc-g-column"><div class="clc-g-col clc-g-column -header"><div class="-bg-image" style="background-image: url(https://i.stack.imgur.com/P3wasm.jpg)"></div><div class="clc-g-col clc-g-center fl-none -logo"><img src="./html - css background image in a different folder from css - Stack Overflow_files/dcSuM.png" alt="ezCater"></div><div class="clc-g-col clc-g-column -company-info"><h2 class="clc-g-col fl-none -company">ezCater</h2><span class="clc-g-col fl-none -meta-info _muted">Catering, eCommerce</span></div></div><div class="clc-g-column -content"><a href="https://stackoverflow.com/jobs/companies/ezcater" data-clc-click="https://clc.stackoverflow.com/click?an=AToAxf8Kxhgpg8g-1UgHCN1TVQICEPoBsomYBB8DtbEHp-gIw9wQAhIAAMCua_w56y3vPgAeuB_6NEX3eIYR&amp;cr=273987&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fcompanies%2Fezcater%3Fmed=clc&amp;sig=hukes3sXqeSJrQ" class="clc-cp-link" target="_blank"></a><h2 class="clc-g-col jc-center -headline">We have great benefits!</h2><ul class="clc-g-col clc-g-column -list"><li class="g-row -item"><i class="clc-g-col fl-none g-center -icon benefit-icon utensils" alt="Tons of Food- Catered Breakfast/Lunch &amp; Stocked Kitchen"><svg viewBox="0 0 25.3 25.3"><path d="M15 5.7h-1.2V2.2h-1.2v3.5h-1.2V2.2h-1.2v5.2c0 .9.5 1.8 1.2 2.3v11.7c0 1 .8 1.7 1.7 1.7s1.7-.8 1.7-1.7V9.7c.7-.5 1.2-1.4 1.2-2.3V2.2h-1v3.5zM5.1 2.2a2.9 2.9 0 0 0-2.9 2.9v2.3c0 .9.5 1.8 1.2 2.3v11.7c0 1 .8 1.7 1.7 1.7s1.7-.8 1.7-1.7V9.7C7.6 9.2 8 8.4 8 7.4V5.1c0-1.6-1.3-2.9-2.9-2.9zm16.3 0a2.9 2.9 0 0 0-2.9 2.9v5.8c0 .9.5 1.8 1.2 2.3v8.2c0 1 .8 1.7 1.7 1.7 1 0 1.7-.8 1.7-1.7V2.8c-.4-.4-1-.6-1.7-.6z"></path></svg></i><span class="clc-g-col ai-center -label">Tons of Food- Catered Breakfast/Lunch &amp; Stocked Kitchen</span></li><li class="g-row -item"><i class="clc-g-col fl-none g-center -icon benefit-icon gym" alt="Wellness Program"><svg viewBox="0 0 25.3 25.3"><path class="st12" d="M9.2 5.6c0-.6-.6-1.1-1.2-1.1H6.8c-.6 0-1.2.5-1.2 1.1v1.2c0-.6-.5-1.2-1.2-1.2-.6 0-1.2.5-1.2 1.2v4.7H.9v2.3h2.3v4.7c0 .6.5 1.2 1.2 1.2.6 0 1.2-.5 1.2-1.2v1.2c0 .6.5 1.2 1.2 1.2H8c.6 0 1.2-.5 1.2-1.2v-5.9H15v-2.3H9.2V5.6zm15.2 5.9h-2.3V6.8c0-.6-.5-1.2-1.2-1.2-.6 0-1.2.5-1.2 1.2V5.6c0-.6-.5-1.2-1.2-1.2h-1.2c-.6 0-1.2.5-1.2 1.2v14.1c0 .6.5 1.2 1.2 1.2h1.2c.6 0 1.2-.5 1.2-1.2v-1.2c0 .6.5 1.2 1.2 1.2.6 0 1.2-.5 1.2-1.2v-4.7h2.3v-2.3z"></path></svg></i><span class="clc-g-col ai-center -label">Wellness Program</span></li><li class="g-row -item"><i class="clc-g-col fl-none g-center -icon benefit-icon money" alt="Stock Options"><svg viewBox="0 0 25.3 25.3"><path d="M14 11.6V5c1.5.5 2.6 1.7 2.6 3.1h2.6c0-2.9-2.3-5.3-5.3-5.8V.8h-2.6v1.4C8.3 2.7 6 5.1 6 8c0 3.7 3.2 5.1 5.3 5.6v6.7c-1.5-.5-2.6-1.7-2.6-3.1H6.1c0 2.9 2.3 5.3 5.3 5.8v1.4H14V23c3-.6 5.3-2.9 5.3-5.8 0-3.6-3.3-5-5.3-5.6zM8.7 8.1c0-1.4 1.1-2.6 2.6-3.1v6c-2.1-.8-2.6-1.8-2.6-2.9zM14 20.4v-6c2.3.8 2.6 1.8 2.6 2.9 0 1.4-1.1 2.6-2.6 3.1z"></path></svg></i><span class="clc-g-col ai-center -label">Stock Options</span></li><li class="g-row -item"><i class="clc-g-col fl-none g-center -icon benefit-icon train" alt="Subsidized MBTA Passes"><svg viewBox="0 0 25.3 25.3"><path class="st12" d="M12.7 1.1c-5.4 0-9.8.6-9.8 4.9v11.6c0 2.3 1.9 4.3 4.3 4.3l-1.8 1.8v.6H20v-.6l-1.8-1.8c2.3 0 4.3-1.9 4.3-4.3V6c-.1-4.3-4.5-4.9-9.8-4.9zM7.2 19.4c-1 0-1.8-.9-1.8-1.8 0-1 .9-1.8 1.8-1.8s1.8.8 1.8 1.7c0 1-.8 1.9-1.8 1.9zm4.3-7.3H5.4V6h6.1v6.1zm6.7 7.3c-1 0-1.8-.9-1.8-1.8 0-1 .9-1.8 1.8-1.8s1.8.9 1.8 1.8-.9 1.8-1.8 1.8zm1.8-7.3h-6.1V6H20v6.1z"></path></svg></i><span class="clc-g-col ai-center -label">Subsidized MBTA Passes</span></li><li class="g-row -item -more-benefits">+ 6 more benefits</li></ul></div><div class="clc-g-col g-row -footer"><a href="https://stackoverflow.com/jobs/companies/ezcater" data-clc-click="https://clc.stackoverflow.com/click?an=AToAxf8Kxhgpg8g-1UgHCN1TVQICEPoBsomYBB8DtbEHp-gIw9wQAhIAAMCua_w56y3vPgAeuB_6NEX3eIYR&amp;cr=273987&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fcompanies%2Fezcater%3Fmed=clc&amp;sig=hukes3sXqeSJrQ" class="clc-g-center clc-btn-secondary -learn-more" target="_blank">Learn more</a></div></div></div><img src="./html - css background image in a different folder from css - Stack Overflow_files/impression(1).gif" class="impression" style="display: none;"></div>
+<script>;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if("function"!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd="undefined"==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){"function"==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener("visibilitychange",function b(){c.hidden||(window.clc.init(a),c.removeEventListener("visibilitychange",b))});b.clc.options=a,a.al&&b.clc.autoload();var g=/Trident/i.test(navigator.userAgent)?a.lib.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,".ie$1.js$2"):a.lib,h=c.createElement("script");h.async=!0,h.src=g,c.body.appendChild(h)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(b){b.style.height=b.style.maxHeight=b.style.minHeight="auto",b.style.display="IFRAME"===b.tagName?"none":"block",[].forEach.call(b.children,a)}function b(a){new Image().src="https://"+e+"/stalled.gif?"+a}var c=window,d=c.document,e="clc.stackoverflow.com",f={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]],"tag-sponsorship":[[730,135]]},ids:{"dfp-tlb":"lb","dfp-mlb":"mlb","dfp-tsb":"sb","dfp-tag":"tag-sponsorship","clc-tlb":"lb","clc-mlb":"mlb","clc-tsb":"sb"}},g=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?"tag-pages":"question-pages",h=location.hostname;/^clc\./.test(location.hostname)&&(h="test/dev.stackoverflow.com");var i=[4385506061,4386578282,4386579572];return function(e){var j=(e&&0<e.length?e:Object.keys(f.ids)).map(function(a){return d.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==j.length){c.googletag=c.googletag||{},c.googletag.cmd=c.googletag.cmd||[],c.googletag.cmd.push(function(){var e=c.googletag,k=d.createElement("div");k.className="adsbox",k.id="clc-abd",k.style.position="absolute",k.style.pointerEvents="none",k.innerHTML="&nbsp;",d.body.appendChild(k);var l=e.pubads();l.enableSingleRequest(),l.addEventListener("slotRenderEnded",function(c){var e=c.serviceName,f=c.slot,g=c.lineItemId;try{var h=f.getSlotElementId(),j=[];h||j.push("id=0");var k=d.getElementById(h);if(!h||k?k.hasAttribute("data-clc-stalled")&&j.push("st=1"):j.push("el=0"),0!==j.length)return void b(j.join("&"));-1===i.indexOf(g)?k.setAttribute("data-clc-prefilled","true"):a(k),k.setAttribute("data-clc-ready","true")}catch(a){var l=d.getElementById("dfp-tsb")||d.getElementById("clc-tsb");l&&l.setAttribute("data-clc-ready","true"),b("e=1")}});var m=c.dfp_targeting||{};m&&Object.keys(m).forEach(function(a){l.setTargeting(a,m[a])});for(var n=0,o=j;n<o.length;n++){var p=o[n],q=f.ids[p],r=f.slots[q],s="/"+"248424177"+"/"+h+"/"+q+"/"+g,t=e.defineSlot(s,r,p);("tag-sponsorship"===q||"sb"==q)&&t.setCollapseEmptyDiv(!0,!0),t.addService(l),!1}e.enableServices();for(var p,u=0,v=j;u<v.length;u++)p=v[u],e.display(p)});var k=d.createElement("script");k.async=!0,k.src="https://www.googletagservices.com/tag/js/gpt.js",document.body.appendChild(k)}}}(),window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=8568e707d3cc","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=b18b3a2258df","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"ga":false});</script>            <script>
+window.clc_request='Am4bFYLIPtUIAAAAALIEhgACAAAAAgAAAAAKAAAAfGh0bWx8Y3NzfACRzfSOIYOiSfuq';                    clc.autoload();
+                var dfp_targeting={Registered:['false'],'so-tag':['html','css'],'X-Site':['softwareengineering.stackexchange.com']};                                    clc.loadDisplayAds();
+            </script><div class="module" id="chat-feature">
+
+    <h4><a href="http://chat.stackoverflow.com/" id="h-chat-link" title="29 users active in 25 rooms the last 60 minutes" wrc_done="true">29 People Chatting</a><span class="wrc1 wrc_icon wrc_injected"></span></h4>
+    <div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17" wrc_done="true">JavaScript</a><span class="wrc1 wrc_icon wrc_injected"></span></span></h3><span title="2017-12-09 04:48:20Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/345257" wrc_done="true">Mosho</a><span class="wrc1 wrc_icon wrc_injected"></span></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/345257" wrc_done="true"><img height="23" width="23" title="Mosho: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/j05a6.png"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/422252" wrc_done="true"><img height="23" width="23" title="William: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/FfDIa.gif"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/855760" wrc_done="true"><img height="23" width="23" title="ShrekOverflow: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/CGNiv.png"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/785745" wrc_done="true"><img height="23" width="23" title="Kendall Frey: 2 hours ago" src="./html - css background image in a different folder from css - Stack Overflow_files/f9fc3249a341a64ee2721637915cd301"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/3453216" wrc_done="true"><img height="23" width="23" title="hilli_micha: 2 hours ago" src="./html - css background image in a different folder from css - Stack Overflow_files/tq5Wi.png"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/2333621" wrc_done="true"><img height="23" width="23" title="hexicle: 2 hours ago" src="./html - css background image in a different folder from css - Stack Overflow_files/JzH4P.png"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/576767" wrc_done="true"><img height="23" width="23" title="Félix Gagnon-Grenier: 2 hours ago" src="./html - css background image in a different folder from css - Stack Overflow_files/nbUrN.jpg"></a><span class="wrc1 wrc_icon wrc_injected"></span></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="Lounge&lt;C++&gt;"><a href="http://chat.stackoverflow.com/rooms/10" wrc_done="true">Lounge&lt;C++&gt;</a><span class="wrc1 wrc_icon wrc_injected"></span></span></h3><span title="2017-12-09 04:19:59Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/179910" wrc_done="true">Jerry Coffin</a><span class="wrc1 wrc_icon wrc_injected"></span></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/179910" wrc_done="true"><img height="23" width="23" title="Jerry Coffin: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/d8962238339d771f0348967be6f97b1b"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/314290" wrc_done="true"><img height="23" width="23" title="Mikhail: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/5ffde821f0f9670e601b19f1731a6849"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/576767" wrc_done="true"><img height="23" width="23" title="Félix Gagnon-Grenier: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/nbUrN.jpg"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/2333621" wrc_done="true"><img height="23" width="23" title="hexicle: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/JzH4P.png"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/4892076" wrc_done="true"><img height="23" width="23" title="jaggedSpire: 1 hour ago" src="./html - css background image in a different folder from css - Stack Overflow_files/s6vwT.png"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/3484570" wrc_done="true"><img height="23" width="23" title="nwp: 3 hours ago" src="./html - css background image in a different folder from css - Stack Overflow_files/r5BRZ.png"></a><span class="wrc1 wrc_icon wrc_injected"></span><a href="http://chat.stackoverflow.com/users/2369847" wrc_done="true"><img height="23" width="23" title="Telkitty: 5 hours ago" src="./html - css background image in a different folder from css - Stack Overflow_files/o1sL7.jpg"></a><span class="wrc1 wrc_icon wrc_injected"></span></div></div></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: {"activeUsers":29,"activeRooms":25,"rooms":[{"name":"JavaScript","id":17,"lastPost":1512794900,"posts":4420299,"users":[{"name":"Mosho","id":345257,"emailhash":"!https://i.stack.imgur.com/j05a6.png?s=128\u0026g=1","lastPost":1512794900},{"name":"William","id":422252,"emailhash":"!https://i.stack.imgur.com/FfDIa.gif?s=128\u0026g=1","lastPost":1512792334},{"name":"ShrekOverflow","id":855760,"emailhash":"!https://i.stack.imgur.com/CGNiv.png?s=128\u0026g=1","lastPost":1512791420},{"name":"Kendall Frey","id":785745,"emailhash":"f9fc3249a341a64ee2721637915cd301","lastPost":1512791122},{"name":"hilli_micha","id":3453216,"emailhash":"!https://i.stack.imgur.com/tq5Wi.png?s=128\u0026g=1","lastPost":1512790893},{"name":"hexicle","id":2333621,"emailhash":"!https://i.stack.imgur.com/JzH4P.png?s=128\u0026g=1","lastPost":1512790655},{"name":"Félix Gagnon-Grenier","id":576767,"emailhash":"!https://i.stack.imgur.com/nbUrN.jpg?s=128\u0026g=1","lastPost":1512790626}],"messages":[{"date":1512794900,"user":"Mosho","userid":345257}],"singleImage":false,"tags":["3d-printing","ecmascript","ecmascript-6","javascript","nodejs"]},{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1512793199,"posts":4975889,"users":[{"name":"Jerry Coffin","id":179910,"emailhash":"d8962238339d771f0348967be6f97b1b","lastPost":1512793199},{"name":"Mikhail","id":314290,"emailhash":"5ffde821f0f9670e601b19f1731a6849","lastPost":1512793110},{"name":"Félix Gagnon-Grenier","id":576767,"emailhash":"!https://i.stack.imgur.com/nbUrN.jpg?s=128\u0026g=1","lastPost":1512792932},{"name":"hexicle","id":2333621,"emailhash":"!https://i.stack.imgur.com/JzH4P.png?s=128\u0026g=1","lastPost":1512792883},{"name":"jaggedSpire","id":4892076,"emailhash":"!https://i.stack.imgur.com/s6vwT.png?s=128\u0026g=1","lastPost":1512791780},{"name":"nwp","id":3484570,"emailhash":"!https://i.stack.imgur.com/r5BRZ.png?s=128\u0026g=1","lastPost":1512787111},{"name":"Telkitty","id":2369847,"emailhash":"!https://i.stack.imgur.com/o1sL7.jpg?s=128\u0026g=1","lastPost":1512778970}],"messages":[{"date":1512793199,"user":"Jerry Coffin","userid":179910}],"singleImage":false,"tags":["c++","c++11","c++14","c++17","c++-faq"]}]} 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/2168855?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">190</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/2168855/is-quoting-the-value-of-url-really-necessary?noredirect=1&amp;lq=1" class="question-hyperlink">Is quoting the value of url() really necessary?</a>
+</div>			</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/339923?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">2720</div></a><a href="https://stackoverflow.com/questions/339923/set-cellpadding-and-cellspacing-in-css?rq=1" class="question-hyperlink">Set cellpadding and cellspacing in CSS?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/391005?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1261</div></a><a href="https://stackoverflow.com/questions/391005/convert-html-css-to-pdf-with-php?rq=1" class="question-hyperlink">Convert HTML + CSS to PDF with PHP?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/806000?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1868</div></a><a href="https://stackoverflow.com/questions/806000/how-do-i-give-text-or-an-image-a-transparent-background-using-css?rq=1" class="question-hyperlink">How do I give text or an image a transparent background using CSS?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/826782?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes extra-large">4006</div></a><a href="https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css?rq=1" class="question-hyperlink">How to disable text selection highlighting using CSS?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/1014861?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">2238</div></a><a href="https://stackoverflow.com/questions/1014861/is-there-a-css-parent-selector?rq=1" class="question-hyperlink">Is there a CSS parent selector?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/1150163?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">668</div></a><a href="https://stackoverflow.com/questions/1150163/stretch-and-scale-a-css-image-in-the-background-with-css-only?rq=1" class="question-hyperlink">Stretch and scale a CSS image in the background - with CSS only</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/2610497?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">3384</div></a><a href="https://stackoverflow.com/questions/2610497/change-an-html5-inputs-placeholder-color-with-css?rq=1" class="question-hyperlink">Change an HTML5 input's placeholder color with CSS</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/2906582?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1144</div></a><a href="https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link?rq=1" class="question-hyperlink">How to create an HTML button that acts like a link?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/3508605?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1394</div></a><a href="https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css?rq=1" class="question-hyperlink">How can I transition height: 0; to height: auto; using CSS?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/23569441?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">2245</div></a><a href="https://stackoverflow.com/questions/23569441/is-it-possible-to-apply-css-to-half-of-a-character?rq=1" class="question-hyperlink">Is it possible to apply CSS to half of a character?</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" wrc_done="true">
+            Hot Network Questions
+        </a><span class="wrc1 wrc_icon wrc_injected"></span>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="https://gaming.stackexchange.com/questions/322691/what-is-the-white-swirl-around-the-pok%c3%a9mon-on-the-map" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    What is the white swirl around the Pokémon on the map?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li>
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7832/how-to-respond-to-questions-that-makes-one-uncomfortable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    How to respond to questions that makes one uncomfortable?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/175867/is-the-sorting-hat-a-horcrux" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Is the Sorting Hat a Horcrux?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li>
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7830/how-to-deal-with-someone-secretly-taking-pictures-of-you" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    How to deal with someone secretly taking pictures of you
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/99710/in-a-world-with-very-advanced-virtual-reality-how-would-one-tell-if-theyre-tr" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    In a world with very advanced virtual reality, how would one tell if they're "trapped" in a virtual world?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/150117/boustrophedonise" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Boustrophedonise
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="https://gamedev.stackexchange.com/questions/151732/what-is-actually-moving-in-an-endless-runner" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    What is actually moving in an endless runner?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="https://superuser.com/questions/1275122/why-does-microsoft-word-mark-contractions-as-misspelled" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Why does Microsoft Word mark contractions as misspelled?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/161616/bug-in-block-scope-variable-leak" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Bug in Block - Scope Variable Leak
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/99681/how-high-can-ludicrous-leg-man-jump" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    How high can Ludicrous Leg man jump?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-sitecore" title="Sitecore Stack Exchange"></div><a href="https://sitecore.stackexchange.com/questions/8919/join-sitecore-slack" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:664 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Join Sitecore Slack
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/150168/reverse-two-sections-of-a-string-around-a-pivot" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Reverse two sections of a string around a pivot
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/111271/why-is-the-dd-gorgon-a-metal-bull" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Why is the D&amp;D gorgon a metal bull?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="https://serverfault.com/questions/887085/struggling-to-remove-server-from-rack" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Struggling to remove server from Rack
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/57727/i-am-a-computer-s-nightmare-but-a-programmer-s-best-friend" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    I am a computer’s nightmare, but a programmer’s best friend
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2558048/what-would-be-the-probability-of-a-4-occurring-in-300-dice-rolls" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    What would be the probability of a 4 occurring in 300 dice rolls?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="https://cs.stackexchange.com/questions/85023/are-there-any-non-finite-automata" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Are there any non-finite automata?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/175851/why-did-john-connor-want-to-stop-the-killing-of-miles-dyson" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Why did John Connor want to stop the killing of Miles Dyson?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/83435/would-hank-have-been-able-to-let-walter-jr-off-for-attempting-to-buy-alcohol-so" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Would Hank have been able to let Walter Jr. off for attempting to buy alcohol so easily?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7652/how-can-i-convince-my-girlfriend-not-to-worry-about-gifts-i-give-her" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    How can I convince my girlfriend not to worry about gifts I give her?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chess" title="Chess Stack Exchange"></div><a href="https://chess.stackexchange.com/questions/19360/how-is-alpha-zero-more-human" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:435 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    How is Alpha Zero "more human"?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7731/how-to-politely-refuse-telling-your-parents-where-you-work" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    How to politely refuse telling your parents where you work?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/174850/is-public-wi-fi-a-threat-nowadays" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Is public Wi-Fi a threat nowadays?
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/182247/verify-string-format-with-given-pattern" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })" wrc_done="true">
+                    Verify string format with given pattern
+                </a><span class="wrc1 wrc_icon wrc_injected"></span>
+
+            </li>
+    </ul>
+
+        
+</div>
+        </div>
+    <div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://stackoverflow.com/feeds/question/8783026" title="feed of this question and its answers">
+            <svg aria-hidden="true" class="svg-icon iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+            question feed
+        </a>
+    </div>
+</div>
+    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/8783026/ivc/4e52');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/8783026/ivc/4e52" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/clc.min.js"></script><script async="" src="./html - css background image in a different folder from css - Stack Overflow_files/gpt.js"></script>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row">
+                    <div class="-logo">
+
+                        <a href="https://stackoverflow.com/"><svg aria-hidden="true" class="svg-icon native iconLogo" width="150" height="30" viewBox="0 0 150 30"><g><path d="M33.9 18.6l-1.7-.2c-1.3-.1-1.9-.6-1.9-1.6 0-1.1.8-1.8 2.4-1.8 1.1 0 2.1.3 2.8.8l1-1c-1-.8-2.3-1.1-3.8-1.1-2.3 0-3.9 1.2-3.9 3.1 0 1.8 1.1 2.7 3.2 2.9l1.8.2c1.2.1 1.8.6 1.8 1.6 0 1.3-1.1 1.9-2.8 1.9-1.3 0-2.5-.3-3.3-1.2l-1 1c1.2 1.1 2.6 1.5 4.4 1.5 2.6 0 4.3-1.2 4.3-3.2-.2-2-1.5-2.7-3.3-2.9zm13.3-4.8c-1.7 0-2.8.3-3.7 1.5l1 1c.6-.9 1.3-1.2 2.7-1.2 1.9 0 2.7.8 2.7 2.3v1h-3.2c-2.4 0-3.7 1.2-3.7 3.1 0 .8.3 1.6.8 2.2.7.7 1.5 1 3 1 1.4 0 2.2-.3 3.1-1.1v1h1.6v-7.2c-.1-2.4-1.5-3.6-4.3-3.6zm2.7 7c0 .9-.2 1.5-.5 1.8-.7.6-1.5.7-2.4.7-1.7 0-2.4-.6-2.4-1.8 0-1.2.8-1.9 2.4-1.9h3l-.1 1.2zm7.6-5.6c1 0 1.6.3 2.4 1.2l1-1c-1.1-1.2-2-1.6-3.5-1.6-2.7 0-4.7 1.8-4.7 5.5 0 3.6 2 5.5 4.7 5.5 1.5 0 2.4-.4 3.5-1.6l-1.1-1c-.8.9-1.4 1.2-2.4 1.2s-1.9-.4-2.5-1.2c-.5-.7-.7-1.5-.7-2.9 0-1.3.2-2.2.7-2.9.7-.8 1.6-1.2 2.6-1.2zm13.4-1.3H69l-4.8 4.7V9.1h-1.6v15.4h1.6v-3.9l1.9-1.9 3.6 5.8h1.9l-4.4-6.9 3.7-3.7zm7.3-.33c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.7-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7.1 1.2 0 2.2-.6 2.7zm10.8-8.2l-2.2 6.9-2.3-6.9h-2.9l4.1 11.1h2.2l4.1-11.1h-3zm7.6-.1c-2.9 0-4.8 2-4.8 5.7 0 4.5 2.5 5.7 5.1 5.7 2 0 3.1-.6 4.2-1.7l-1.7-1.6c-.7.7-1.3 1-2.5 1-1.6 0-2.4-1-2.4-2.5h6.9v-1.2c0-3.2-1.7-5.4-4.8-5.4zm-2.1 4.6c0-.5.1-.8.3-1.2.3-.7.9-1.2 1.9-1.2.9 0 1.6.5 1.9 1.2.2.4.2.7.3 1.2h-4.4zm11-3.4v-1.1h-2.7v11.1h2.8v-6.7c0-1.4.9-2 1.8-2 .7 0 1 .2 1.5.7l2.1-2.1c-.8-.8-1.5-1-2.6-1-1.3-.1-2.3.4-2.9 1.1zm6.3-2.3v12.3h2.8v-8.8h2v-2.1h-2v-1.2c0-.6.3-1 1-1h1.1v-2.3h-1.6c-2.3 0-3.3 1.6-3.3 3.1zm16.2 1.1c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.8-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7 0 1.2 0 2.2-.6 2.7zm16.5-8.2l-1.8 6.9-2.3-6.9h-2l-2.3 6.9-1.8-6.9H134l3.4 11.1h2.3l2.3-7 2.3 7h2.3l3.4-11.1h-2.9zm-25.1 7.7V9.27h-2.8v12.3c0 1.6 1 3.2 3.2 3.2h1.6v-2.3h-1c-.7 0-1-.4-1-1.1zM41.3 15.6l1.4-1.4h-3v-3.5h-1.6v11.1c0 1.6.9 2.9 2.7 2.9h1.1v-1.3h-.8c-1 0-1.5-.6-1.5-1.6v-6.1h1.7v-.1z" fill="#222426"></path><path fill="#BCBBBB" d="M21 27v-8h3v11H0V19h3v8z"></path><path d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z" fill="#F48024"></path></g></svg></a>
+                    </div>
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com/" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                     <li class="-item"><a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">Salary Calculator</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-business-category" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })" wrc_done="true">Stack Overflow<br> Business</a><span class="wrc0 wrc_icon wrc_injected"></span></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })" wrc_done="true">Talent</a><span class="wrc0 wrc_icon wrc_injected"></span></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-advertise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })" wrc_done="true">Ads</a><span class="wrc0 wrc_icon wrc_injected"></span></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })" wrc_done="true">Enterprise</a><span class="wrc0 wrc_icon wrc_injected"></span></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal" wrc_done="true">Legal</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy" wrc_done="true">Privacy Policy</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/" wrc_done="true">Stack Exchange<br> Network</a><span class="wrc1 wrc_icon wrc_injected"></span></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/8783026/css-background-image-in-a-different-folder-from-css#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators" wrc_done="true">Server Fault</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users" wrc_done="true">Super User</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications" wrc_done="true">Web Applications</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers" wrc_done="true">Ask Ubuntu</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters" wrc_done="true">Webmasters</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers" wrc_done="true">Game Development</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems" wrc_done="true">TeX - LaTeX</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle" wrc_done="true">Software Engineering</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems" wrc_done="true">Unix &amp; Linux</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software" wrc_done="true">Ask Different (Apple)</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators" wrc_done="true">WordPress Development</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals" wrc_done="true">Geographic Information Systems</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts" wrc_done="true">Electrical Engineering</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system" wrc_done="true">Android Enthusiasts</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals" wrc_done="true">Information Security</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community" wrc_done="true">Database Administrators</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators" wrc_done="true">Drupal Answers</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts" wrc_done="true">SharePoint</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts" wrc_done="true">User Experience</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica" wrc_done="true">Mathematica</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between" wrc_done="true">Salesforce</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS" wrc_done="true">ExpressionEngine® Answers</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas" wrc_done="true">Stack Overflow em Português</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games" wrc_done="true">Blender</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers" wrc_done="true">Network Engineering</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography" wrc_done="true">Cryptography</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews" wrc_done="true">Code Review</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform" wrc_done="true">Magento</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations" wrc_done="true">Software Recommendations</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing" wrc_done="true">Signal Processing</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs" wrc_done="true">Emacs</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi" wrc_done="true">Raspberry Pi</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов" wrc_done="true">Stack Overflow на русском</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers" wrc_done="true">Programming Puzzles &amp; Code Golf</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática" wrc_done="true">Stack Overflow en español</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain" wrc_done="true">Ethereum</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field" wrc_done="true">Data Science</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino" wrc_done="true">Arduino</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts" wrc_done="true">Bitcoin</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })" wrc_done="true">
+                        <strong>
+                            more (26)
+                        </strong>
+                    </a><span class="wrc1 wrc_icon wrc_injected"></span>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers" wrc_done="true">Photography</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts" wrc_done="true">Science Fiction &amp; Fantasy</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts" wrc_done="true">Graphic Design</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts" wrc_done="true">Movies &amp; TV</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts" wrc_done="true">Music: Practice &amp; Theory</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings" wrc_done="true">Worldbuilding</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs" wrc_done="true">Seasoned Advice (cooking)</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers" wrc_done="true">Home Improvement</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate" wrc_done="true">Personal Finance &amp; Money</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education" wrc_done="true">Academia</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law" wrc_done="true">Law</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })" wrc_done="true">
+                        <strong>
+                            more (16)
+                        </strong>
+                    </a><span class="wrc1 wrc_icon wrc_injected"></span>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts" wrc_done="true">English Language &amp; Usage</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism" wrc_done="true">Skeptics</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more" wrc_done="true">Mi Yodeya (Judaism)</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers" wrc_done="true">Travel</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more" wrc_done="true">Christianity</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English" wrc_done="true">English Language Learners</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language" wrc_done="true">Japanese Language</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms" wrc_done="true">Arqade (gaming)</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles" wrc_done="true">Bicycles</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games" wrc_done="true">Role-playing Games</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans" wrc_done="true">Anime &amp; Manga</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles" wrc_done="true">Puzzling</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles" wrc_done="true">Motor Vehicle Maintenance &amp; Repair</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })" wrc_done="true">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a><span class="wrc1 wrc_icon wrc_injected"></span>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians" wrc_done="true">MathOverflow</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields" wrc_done="true">Mathematics</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization" wrc_done="true">Cross Validated (stats)</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields" wrc_done="true">Theoretical Computer Science</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics" wrc_done="true">Physics</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students" wrc_done="true">Chemistry</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students" wrc_done="true">Biology</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science" wrc_done="true">Computer Science</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence" wrc_done="true">Philosophy</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })" wrc_done="true">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a><span class="wrc1 wrc_icon wrc_injected"></span>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites" wrc_done="true">Meta Stack Exchange</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API" wrc_done="true">Stack Apps</a><span class="wrc0 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites" wrc_done="true">API</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL" wrc_done="true">Data</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network" wrc_done="true">Area 51</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                    </ul>
+    </nav>
+                <div class="-copyright g-row jc-end">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1" wrc_done="true">Blog</a><span class="wrc0 wrc_icon wrc_injected"></span></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link" wrc_done="true">Facebook</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link" wrc_done="true">Twitter</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link" wrc_done="true">LinkedIn</a><span class="wrc1 wrc_icon wrc_injected"></span></li>
+                        </ul>
+
+                        <div>
+                            <p>
+site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link" wrc_done="true">cc by-sa 3.0</a><span class="wrc1 wrc_icon wrc_injected"></span>
+                    with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link" wrc_done="true">attribution required</a><span class="wrc0 wrc_icon wrc_injected"></span>.
+                                <span id="svnrev">rev&nbsp;2017.12.8.28105</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('set', 'dimension2', '|html|css|');
+                ga('send', 'pageview');
+                    
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div><script src="./html - css background image in a different folder from css - Stack Overflow_files/markup.js" async=""></script><input style="position: absolute; top: -10000px;"><iframe id="piggyDomainNotSupported" style="opacity: 0; display: none;" src="./html - css background image in a different folder from css - Stack Overflow_files/saved_resource.html"></iframe><input style="position: absolute; top: -10000px;"></body></html>
