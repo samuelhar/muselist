@@ -1,8 +1,15 @@
 <!doctype html>
 <html>
   <head>
-    <title>Example of the Authorization Code flow with Spotify</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/logo.png">
+
+    <title>MuseList Home</title>
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -14,14 +21,23 @@
         width: 500px;
       }
     </style>
+    <script src="template.js"></script>
   </head>
 
   <body>
-    <div class="container">
-      <div id="login">
-        <h1>MuseList</h1>
-        <a href="/spotify/login" class="btn btn-primary">Log in with Spotify</a>
+    <div class='body'></div>
+      <div class="grad"></div>
+      <div class="header">
+    
+      <div id="login" style="text-align:right">
+        <img src="logo.png"; style="width:250px;height:250px;margin-left: 140px;margin-top:-220px;">
+         <h1><div style="margin-left: 160px;margin-top:-60px;">Discover More</div></h1>
+            
+        <div style="text-align:right">
+        <center><a href="/spotify/login" class="btn btn-primary" style="margin-left: 200px;margin-top:100px;">Log in with Spotify</a></center>
       </div>
+      </div>
+      <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
       <div id="loggedin">
         <div id="user-profile">
         </div>
