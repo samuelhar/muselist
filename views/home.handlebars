@@ -1,10 +1,14 @@
+<link rel="icon" href="/logo.png">
 <div class ="page-header">
-  <h3>Current Playlist</h3>
+  <h3>Your Current Playlist</h3>
 </div>
-<p>Welcomeeee! Please <a href="/login_twitter">log in</a>.</p>
+<img src="logo.png"; style="width:100px;height:100px;margin-left: 1050px;margin-top:-130px;">
+<p>Welcome to MuseList! Please <a href="/login_twitter">log in to Twitter</a>.</p>
+<br>
+<h4>Customize your Playlist</h4>
+<br>
 
-<h4> Your Current Playlist: </h4>
-
+<h5>Add Songs by:</h5>
 
   <ol>
   {{#each songs_played }}
@@ -22,7 +26,8 @@
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="add_genre" class="btn btn-default">Add Genres</button>
+      <img src="genre.jpg"; style="width:100px;height:70px;">
+      <button type="add_genre" class="btn btn-default">Genres</button>
     </div>
   </div> <!-- End of form-group -->
 
@@ -36,7 +41,8 @@
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="add_artist" class="btn btn-default">Add Songs by an Artist</button>
+    <img src="artist.jpeg"; style="width:100px;height:70px;">
+      <button type="add_artist" class="btn btn-default">Artists</button>
     </div>
   </div> <!-- End of form-group -->
 
@@ -50,13 +56,16 @@
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="add_song" class="btn btn-default">Add a Specific Song</button>
+    <img src="songs.jpeg"; style="width:100px;height:70px;">
+      <button type="add_song" class="btn btn-default">Songs</button>
     </div>
   </div> <!-- End of form-group -->
 
 
 
 </form>
+<br><br><br><br>
+<h5>Other Playlist Options:</h5>
 
 <form class="formSearchbar" role="form"
   action="/remove_songs?form=remove_songs" method="POST">
@@ -65,7 +74,7 @@
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="remove_songs" class="btn btn-default">Remove songs</button>
+      <button type="remove_songs" class="btn btn-default">Edit</button>
     </div>
   </div> <!-- End of form-group -->
 
@@ -78,7 +87,7 @@
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="create_playlist" class="btn btn-default">Finalize Playlist</button>
+      <button type="create_playlist" class="btn btn-default">Finalize</button>
     </div>
   </div> <!-- End of form-group -->
 
@@ -89,7 +98,7 @@
  
    <div class="form-group">
      <div class="col-sm-4">
-       <button type="view_data" class="btn btn-default">View Playlists</button>
+       <button type="view_data" class="btn btn-default">View</button>
      </div>
    </div>
  </form>
