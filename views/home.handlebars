@@ -10,45 +10,6 @@
 
 <h5>Add Songs by:</h5>
 
-  <ol>
-  {{#each songs_played }}
-    <li>{{this}} </li>
-    
-  {{/each}}
-  </ol>
-<div class="searchbar">
-
-
-<form class="formuser" role="form"
-  action="/user?form=user" method="POST">
-
-
-
-  <div class="form-group">
-    <div class="col-sm-4">
-      <img src="genre.jpg"; style="width:100px;height:70px;">
-      <button type="add_genre" class="btn btn-default">Genres</button>
-    </div>
-  </div> <!-- End of form-group -->
-
-</form>
-
-
-<form class="formSearchbar" role="form"
-  action="/search_for_artist?form=search_for_artist" method="POST">
-
-
-
-  <div class="form-group">
-    <div class="col-sm-4">
-    <img src="artist.jpeg"; style="width:100px;height:70px;">
-      <button type="add_artist" class="btn btn-default">Artists</button>
-    </div>
-  </div> <!-- End of form-group -->
-
-</form>
-
-
 <form class="formSearchbar" role="form"
   action="/search_for_song?form=search_for_song" method="POST">
 
@@ -64,8 +25,45 @@
 
 
 </form>
+
+<form class="formSearchbar" role="form"
+  action="/search_for_artist?form=search_for_artist" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+    <img src="artist.jpeg"; style="width:100px;height:70px;">
+      <button type="add_artist" class="btn btn-default">Artists</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+<form class="formuser" role="form"
+  action="/user?form=user" method="POST">
+
+
+
+  <div class="form-group">
+    <div class="col-sm-4">
+      <img src="genre.jpg"; style="width:100px;height:70px;">
+      <button type="add_genre" class="btn btn-default">Genres</button>
+    </div>
+  </div> <!-- End of form-group -->
+
+
+</form>
 <br><br><br><br>
 <h5>Other Playlist Options:</h5>
+
+<form class="formSearchbar" role="form"
+   action="/data/select" method="GET">
+ 
+   <div class="form-group">
+     <div class="col-sm-4">
+       <button type="view_data" class="btn btn-default">View</button>
+     </div>
+   </div>
+ </form>
 
 <form class="formSearchbar" role="form"
   action="/remove_songs?form=remove_songs" method="POST">
@@ -93,19 +91,19 @@
 
 </form>
 
-<form class="formSearchbar" role="form"
-   action="/data/select" method="GET">
- 
-   <div class="form-group">
-     <div class="col-sm-4">
-       <button type="view_data" class="btn btn-default">View</button>
-     </div>
-   </div>
- </form>
+<br><br><br>
+
+    <div class="col-sm-4">
+ <ol>
+  {{#each songs_played }}
+    <li>{{this}} </li>
+    
+  {{/each}}
+  </ol>
+<div class="searchbar">
+</div></div>
 
 
 </div> <!-- End of searchbar -->
-
-
 
 </script>
