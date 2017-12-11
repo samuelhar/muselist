@@ -112,7 +112,7 @@ Remove Songs,remSong.delete,click,2,click fields full,Pass,Stays on the current 
 Remove Songs,remSong.back,click,1,click,Pass,Redirects to home page
 Finalize Playlist,fin.addmore,click,1,click,Pass,Redirects to home page
 Finalize Playlist,fin.createnew,click,1,click,Pass,Clears playlist and returns to home page
-Finalize Playlist,fin.save,click,1,click,Pass,Saves playlist to user spotify account
+Finalize Playlist,fin.save,click,1,click,Pass,Saves playlist within the database
 Finalize Playlist,fin.tweet,click,1,click,Pass,tweets the playlist ID and a short message
 Finalize Playlist,fin.back,click,1,click,Pass,returns to home page
 View Playlists,view.back,click,1,click,Pass,returns to home page
