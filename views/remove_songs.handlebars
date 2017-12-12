@@ -1,12 +1,14 @@
-<div class="page-header">
-	<h3>Remove Songs</h3>
+<link rel="icon" href="/logo.png">
+<div class ="page-header">
+  <h3>Edit Your Playlist</h3>
 </div>
+<img src="logo.png"; style="width:100px;height:100px;margin-left: 1050px;margin-top:-130px;">
+<br>
+<br>
 
-<div class="display">
 
 
-
-<h4> This is your playlist: </h4>
+<h4>Your Current Playlist: </h4>
   <ol>
   {{#each songs_played }}
     <li>{{this}} </li>
@@ -20,7 +22,7 @@
 
   <div class="form-group">
     <label for="song_number" class="col-sm-2 control-label">
-    Song Number you wish to delete</label>
+    Song Number to Delete</label>
     <div class="col-sm-4">
       <input type="text" class="form-control" id="song_number" value ="0"
       name="song_number">
@@ -29,7 +31,7 @@
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="delete_song" class="btn btn-default">Delete Song</button>
+      <button type="delete_song" class="btn btn-default" style="margin-top:70px; margin-left:-570px;">Delete Song</button>
     </div>
   </div> <!-- End of form-group -->
 
@@ -44,8 +46,7 @@
 
   <div class="form-group">
     <div class="col-sm-4">
-      <button type="return_home" class="btn btn-default">Go back</button>
+      <button type="return_home" class="btn btn-default" style="margin-top:300px;">Back</button>
     </div>
   </div> <!-- End of form-group -->
-
 </form>
