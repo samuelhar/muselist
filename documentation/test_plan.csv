@@ -101,7 +101,8 @@ Search Artist,artistSearch.num,integer < 50 and > 0,8,asdfs,Pass,Adds no songs t
 Search Artist,artistSearch.add,click,1,click when all fields empty,Pass,Adds specified songs to playlist
 Search Artist,artistSearch.add,click,2,click fields full,Pass,Redirects to home page
 Search Artist,artistSearch.back,click,1,click,Pass,Redirects to home page
-Add Song,addSong.name,string: song name,1,I Am The Walrus,Pass,Hangs the app
+Add Song,addSong.name,string: song name,1,I Am The Walrus,Pass,Adds specified song to playlist
+Add Song,addSong.artistname,string: artist name,1,The Beatles,Pass,Adds specified song to playlist
 Remove Songs,remSong.num,integer,1,0,Pass,Doesn't delete a song
 Remove Songs,remSong.num,integer,2,1,Pass,Deletes song with that number
 Remove Songs,remSong.num,integer,3,15,Pass,Deletes song with that number

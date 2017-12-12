@@ -7,6 +7,5 @@ BugID,TestID,Description,Severity (1 to 3),Assgined,Completed Date
 5,"genre.party.4, 8",App hangs if num > 20,2,Arley,
 6,"genre.punk.4, 8",App hangs if num > 20,2,Arley,
 7,"genre.regae.4, 8",App hangs if num > 20,2,Arley,
-8,addSong.name.1,UI fields misnamed,2,Ivorine,
 9,artistSearch.artist.3,App hangs if invalid artist input,2,Sam H,
 10,"artistSearch.num.5,6",App hangs if num > 50,2,Sam H,
